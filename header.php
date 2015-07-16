@@ -28,40 +28,31 @@
  	<div class="container">
 	  <div class="header-top">
 	        <div class="logo wow bounceInLeft" data-wow-delay="0.4s">
-				<a href="index.html"><img src="images/logo.png" alt=""/></a>
+				<a href="#"><img src="#" alt=""/></a>
 			 </div>
 		     <div class="h_menu4"><!-- start h_menu4 -->
 				<a class="toggleMenu" href="#">Menu</a>
 				<ul class="nav">
 					<li class="active"><a class="scroll" href="index.html">Home</a></li>
-						<li><a href="#about" class="scroll">About</a></li>
-						<li><a href="portfolio.html">Portfolio</a>
-						<li><a href="feature.html">Features</a>
+						<li><a href="#" class="scroll">About</a></li>
+						<li><a href="#">Academics</a>
+						<li><a href="#">Courses Offered</a>
 							<ul>
-								<li><a href="feature.html">Typography</a></li>
-								<li><a href="feature.html">Shortcodes</a></li>
-								<li><a href="feature.html">Columns</a></li>
-								<li><a href="feature.html">Pricing plans</a></li>
-								<li><a href="feature.html">Alerts</a></li>
-								<li><a href="feature.html">Services</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#">6</a></li>
 							</ul>
 						</li>
-					<li><a href="#blog" class="scroll">Blog</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="#blog" class="scroll">Whatever</a></li>
+					<li><a href="#">Contact</a></li>
 
 				</ul>
 				<script type="text/javascript" src="js/nav.js"></script>
 			</div><!-- end h_menu4 -->
-			<div class="social_icons wow bounceInRight" data-wow-delay="0.4s">
-					<ul>
-						<li><a href="#"><i class="facebook"></i></a></li>
-						<li><a href="#"><i class="twitter"></i></a></li>
-						<li><a href="#"><i class="rss"></i></a></li>
-						<li><a href="#"><i class="viemo"></i></a></li>
-						<li><a href="#"><i class="youtube"></i></a></li>
-						<li><a href="#"><i class="linkedin"></i></a></li>
-					</ul>
-				</div>
+			
 
 			<div class="clearfix"> </div>
 			
