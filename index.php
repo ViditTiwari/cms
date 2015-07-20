@@ -25,7 +25,9 @@
 									<li>
 									<img src="#" class="img-responsive" alt="" />
 									</li>
+									
 								 </ul>
+
 							</div>
 						</div>
 					</div>	
