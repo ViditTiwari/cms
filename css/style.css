@@ -86,7 +86,7 @@ nav.top-nav {
 	}
 .nav ul {
     list-style: none;
-	width: 13em;
+	width:100% ;
 	border:none;
 	z-index:888;
 }

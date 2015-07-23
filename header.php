@@ -1,3 +1,7 @@
+<?php
+$dbcon = new MySQLi("localhost","root","","cvs");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +28,7 @@
 
 </head>
 <body>
-	<div class="header box css3-shadow" id="head"">
+	<div class="header box css3-shadow" id="head">
  	<div class="container">
 	  <div class="header-top">
 	        <div class="logo wow bounceInLeft" data-wow-delay="0.4s">
@@ -34,20 +38,30 @@
 				<a class="toggleMenu" href="#">Menu</a>
 				<ul class="nav">
 					<li class="active"><a class="scroll" href="index.html">Home</a></li>
-						<li><a href="#" class="scroll">About</a></li>
-						<li><a href="#">Academics</a>
-						<li><a href="#">Courses Offered</a>
-							<ul>
-								<li><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#">6</a></li>
-							</ul>
-						</li>
-					<li><a href="#blog" class="scroll">Whatever</a></li>
-					<li><a href="#">Contact</a></li>
+						
+                    <?php
+$res=$dbcon->query("SELECT * FROM main_menu1");
+while($row=$res->fetch_array())
+{
+	?>
+	<li><a href="<?php echo $row['m_menu_link']; ?>"><?php echo $row['m_menu_name']; ?></a>
+	<?php
+	$res_pro=$dbcon->query("SELECT * FROM sub_menu WHERE m_menu_id=".$row['m_menu_id']);
+	?>
+    <ul>				
+		<?php  
+		while($pro_row=$res_pro->fetch_array())
+		{
+			?><li><a href="<?php echo $pro_row['s_menu_link']; ?>"><?php echo $pro_row['s_menu_name']; ?></a></li><?php
+		}
+		?>
+	</ul>
+	</li>	
+	
+    <?php
+}
+?>
+
 
 				</ul>
 				<script type="text/javascript" src="js/nav.js"></script>
