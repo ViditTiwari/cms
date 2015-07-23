@@ -32,7 +32,7 @@
 			<!--/start-copyright-section-->
 				<div class="copyright">
 					<div class="container">
-					<div class="logo2  wow bounceInLeft" data-wow-delay="0.4s"><a href="#"><img src="#" alt=""/ title="logo" /></a></div>
+					<div class="logo2  wow bounceInLeft" data-wow-delay="0.4s"><a href="#"><img src="images/logo1.png" alt=""/ title="logo" /></a></div>
 					<p class="write  wow bounceInRight" data-wow-delay="0.4s">Copyright &copy; 2015  All rights  Reserved <a href="#">CVS</a></p>
 					</div>
 					<div class="clearfix"></div>

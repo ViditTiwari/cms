@@ -32,7 +32,7 @@ $dbcon = new MySQLi("localhost","root","","cvs");
  	<div class="container">
 	  <div class="header-top">
 	        <div class="logo wow bounceInLeft" data-wow-delay="0.4s">
-				<a href="#"><img src="#" alt=""/></a>
+				<a href="#"><img src="images/logo.png" alt=""/></a>
 			 </div>
 		     <div class="h_menu4"><!-- start h_menu4 -->
 				<a class="toggleMenu" href="#">Menu</a>
