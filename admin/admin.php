@@ -124,13 +124,13 @@ $title = 'Admin';
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Create a New Page<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
+                                    <a href="add.php">Add new Page</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">Buttons</a>
+                                    <a href="edit.php">Edit Pages</a>
                                 </li>
                                 <li>
-                                    <a href="notifications.html">Notifications</a>
+                                    <a href="delete.php">Delete</a>
                                 </li>
                                 <li>
                                     <a href="typography.html">Typography</a>
@@ -197,6 +197,7 @@ $title = 'Admin';
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Dashboard</h1>
+                    
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

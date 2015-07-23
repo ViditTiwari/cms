@@ -1,5 +1,5 @@
 <?php
-$dbcon = new MySQLi("localhost","root","","cvs");
+$dbcon = new MySQLi("localhost","root","sinku1795","cvs");
 ?>
 
 <!DOCTYPE html>
@@ -40,16 +40,16 @@ $dbcon = new MySQLi("localhost","root","","cvs");
 					<li class="active"><a class="scroll" href="index.html">Home</a></li>
 						
                     <?php
-$res=$dbcon->query("SELECT * FROM main_menu1");
-while($row=$res->fetch_array())
-{
-	?>
-	<li><a href="<?php echo $row['m_menu_link']; ?>"><?php echo $row['m_menu_name']; ?></a>
-	<?php
-	$res_pro=$dbcon->query("SELECT * FROM sub_menu WHERE m_menu_id=".$row['m_menu_id']);
-	?>
-    <ul>				
-		<?php  
+					$res=$dbcon->query("SELECT * FROM main_menu1");
+					while($row=$res->fetch_array())
+					{
+						?>
+						<li><a href="<?php echo $row['m_menu_link']; ?>"><?php echo $row['m_menu_name']; ?></a>
+						<?php
+						$res_pro=$dbcon->query("SELECT * FROM sub_menu WHERE m_menu_id=".$row['m_menu_id']);
+						?>
+					    <ul>				
+							<?php  
 		while($pro_row=$res_pro->fetch_array())
 		{
 			?><li><a href="<?php echo $pro_row['s_menu_link']; ?>"><?php echo $pro_row['s_menu_name']; ?></a></li><?php
