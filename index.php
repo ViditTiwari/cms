@@ -14,16 +14,16 @@
 						<div class="callbacks_container">
 								<ul class="rslides" id="slider">
 									<li>
-									<img src="#" class="img-responsive" alt="" />
+									<img src="images/CVS.jpg" class="img-responsive" alt="CVS" />
 									</li>
 									<li>
-									<img src="#" class="img-responsive" alt="" />
+									<img src="images/CVS.jpg" class="img-responsive" alt="CVS" />
 									</li>
 									<li>
-									<img src="#" class="img-responsive" alt="" />
+									<img src="images/CVS.jpg" class="img-responsive" alt="CVS" />
 									</li>
 									<li>
-									<img src="#" class="img-responsive" alt="" />
+									<img src="images/CVS.jpg" class="img-responsive" alt="CVS" />
 									</li>
 									
 								 </ul>
@@ -31,7 +31,7 @@
 							</div>
 						</div>
 					</div>	
-				 </script><script src="js/responsiveslides.min.js"></script>
+				<script src="js/responsiveslides.min.js"></script>
 						   <script>
 					    $(function () {
 					      $("#slider").responsiveSlides({
@@ -51,7 +51,7 @@
 
 <div id="about" class="service-section">
 			<div class="container">
-				<div class="serve-grids wow bounceIn animated" data-wow-delay="0.4s">
+				<div class="serve-grids " data-wow-delay="0.4s">
 					<div class="col-md-4 services-section-grid">
 						<div class="services-section-grid-head">
 							<div class="service-icon">
@@ -99,7 +99,7 @@
 
 <div class="container">
 				<div class="mid-section">
-						<div class="mid-top wow fadeInUpBig animated animated" data-wow-delay="0.4s">
+						<div class="mid-top " data-wow-delay="0.4s">
 							<div class="col-md-10 mid-text">
 							 <h3>TEXT BLOCK</h3>
 							<p>Description.</p>
@@ -114,7 +114,7 @@
 
 <div class="container">
 					<div class="bottom-section">
-							<div class="bottom-top wow fadeInDownBig animated animated" data-wow-delay="0.4s">
+							<div class="bottom-top " data-wow-delay="0.4s">
 								<div class="col-md-10 bottom-text">
 								 <h3>TEXT BLOCK 2</h3>
 								<p>Description</p>

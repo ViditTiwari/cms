@@ -1,7 +1,7 @@
 			<!--/start-footer-section-->
 			<div class="footer-section">
 				<div class="container">
-					<div class="footer-grids wow bounceIn animated" data-wow-delay="0.4s">
+					<div class="footer-grids " data-wow-delay="0.4s">
 						<div class="col-md-3 footer-grid">
 						<h4>Block 1</h4>
 						<div class="border2"></div>
