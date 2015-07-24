@@ -123,7 +123,7 @@
                                     <a href="add.php">Add new Page</a>
                                 </li>
                                 <li>
-                                    <a href="edit.php">Edit Pages</a>
+                                    <a href="edit.php">Edit Page</a>
                                 </li>
                                 <li>
                                     <a href="delete.php">Delete</a>

@@ -13,7 +13,7 @@
 		switch ($_POST['action']) {
 			case 'find':
 				$id = $_POST['post'];
-				list($_id, $_title, $_content) = find_page_by_id($id, $db);
+				list($_id, $_title, $_content) = find_page_by_id($id);
 				break;
 			case 'edited':
 				$edit_id = $_POST['edit_id'];
@@ -21,7 +21,7 @@
 				$content = stripcslashes($content);
 				$content = mysql_real_escape_string($content);
 				$edit_id = mysql_real_escape_string($edit_id);
-				$msg = update_page($content, $edit_id, $db);
+				$msg = update_page($content, $edit_id);
 				break;
 		}
 	}	
@@ -38,7 +38,7 @@
 									<h4>Choose Page to Edit</h4>
 										<input type="hidden" name="action" value="find">	
 										<div class="form-group">
-											<?php $result = get_page_and_id($db); ?>
+											<?php $result = get_page_and_id(); ?>
 											<select class='form-control' name=post value=''>											
 											<?php foreach ($result as $res){ 
 												echo "<option class='form-control' value=$res[id]>$res[title]</option>";
