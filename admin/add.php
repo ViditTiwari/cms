@@ -19,7 +19,7 @@
 		$Title = mysql_real_escape_string($Title);
 
 		if($Title and $content){
-			$msg = add_page($Title, $content, $db); //Call Add page
+			$msg = add_page($Title, $content); //Call Add page
 		} else {
 			if(!$Title){
 				$msg ="Please Add Title";

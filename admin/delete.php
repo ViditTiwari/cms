@@ -6,7 +6,7 @@
 
 	if (isset($_POST['action']) == 'delete') {
 		$id = $_POST['post'];
-		$msg = delete_page($id, $db);
+		$msg = delete_page($id);
 	}	
 ?>
 
@@ -19,7 +19,7 @@
                     		<form  role="form" method="post" action="">
 			            		<div class="col-lg-4">
 									<input type="hidden" class="form-control" name="action" value="delete">	
-									<?php $result = get_page_and_id($db); ?>
+									<?php $result = get_page_and_id(); ?>
 									<select class='form-control' name=post value=''>											
 										<?php foreach ($result as $res){ 
 											echo "<option class='form-control' value=$res[id]>$res[title]</option>";
