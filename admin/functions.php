@@ -24,7 +24,7 @@
 	}
 
 	function delete_page($id, $db){
-		$query = mysql_query("DELETE FROM page WHERE id = $id LIMIT 1");
+		$query = $db->query("DELETE FROM page WHERE id = $id LIMIT 1");
 		return "Deleted";
 	}
 
