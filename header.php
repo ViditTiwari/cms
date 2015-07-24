@@ -1,4 +1,7 @@
-<?php require('includes/config_new.php'); 
+<?php
+require_once('includes/config_new.php'); 
+require_once('function.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -37,31 +40,10 @@
 				<a class="toggleMenu" href="#">Menu</a>
 				<ul class="nav">
 					<li class="active"><a class="scroll" href="index.html">Home</a></li>
-						
-                    <?php
-					$res=$dbcon->query("SELECT * FROM main_menu1");
-					while($row=$res->fetch_array())
-					{
-						?>
-						<li><a href="<?php echo $row['m_menu_link']; ?>"><?php echo $row['m_menu_name']; ?></a>
-						<?php
-						$res_pro=$dbcon->query("SELECT * FROM sub_menu WHERE m_menu_id=".$row['m_menu_id']);
-						?>
-					    <ul>				
-							<?php  
-		while($pro_row=$res_pro->fetch_array())
-		{
-			?><li><a href="<?php echo $pro_row['s_menu_link']; ?>"><?php echo $pro_row['s_menu_name']; ?></a></li><?php
-		}
-		?>
+						<!-- Navigation Menu-->
+						<?php nav_menu(); ?>
 	</ul>
 	</li>	
-	
-    <?php
-}
-?>
-
-
 				</ul>
 				<script type="text/javascript" src="js/nav.js"></script>
 			</div><!-- end h_menu4 -->
