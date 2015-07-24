@@ -26,5 +26,6 @@ try {
 
 //include the user class, pass in the database connection
 include('classes\user.php');
+include('function.php');
 $user = new User($db); 
 ?>

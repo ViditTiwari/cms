@@ -1,5 +1,16 @@
 <!-- All Functions -->
 <?php 
+function add_main_menu($menu_name, $menu_link){
+	global $db;
+
+	$sql=$db->query("INSERT INTO main_menu1(m_menu_name,m_menu_link) VALUES('$menu_name','$menu_link')");
+}
+
+function add_sub_menu($parent, $proname, $menu_link)
+{
+	global $db;
+	$sql=$db->query("INSERT INTO sub_menu(m_menu_id,s_menu_name,s_menu_link) VALUES('$parent','$proname','$menu_link')");
+}
 	
 	function add_page($Title, $content){
 		global $db;

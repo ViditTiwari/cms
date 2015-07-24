@@ -1,6 +1,6 @@
 <?php
 require_once('includes/config_new.php'); 
-require_once('function.php');
+
 
 ?>
 
