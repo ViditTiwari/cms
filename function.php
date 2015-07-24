@@ -1,8 +1,4 @@
 <?php 
-require_once('includes/config_new.php'); 
-?>
-
-<?php 
 	function select_table($table){
 		global $db;
 		$query = $db->query("SELECT * FROM {$table}"); //By table name

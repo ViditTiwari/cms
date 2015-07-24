@@ -1,8 +1,4 @@
 <!-- All Functions -->
-<? php
- require_once('../includes/config.php'); 
- ?>
- 
 <?php 
 	
 	function add_page($Title, $content){
