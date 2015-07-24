@@ -1,4 +1,4 @@
-<?php require('includes/config.php'); 
+<?php require('includes/config_new.php'); 
 ?>
 
 <!DOCTYPE html>
