@@ -47,7 +47,7 @@
 											<h4>Page Content</h4>
 										</div>
 										<div class="form-group">
-									    	<textarea  class="form-control" name="content" style="cursor:text;" rows="20" cols="40"></textarea>
+									    	<textarea  class="form-control" name="content" rows="20" cols="40" style="cursor:text;" ></textarea>
 										</div>									  
 										 
 						</div>

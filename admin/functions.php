@@ -14,7 +14,8 @@
 	}
 
 	function update_page($content, $edit_id, $db){
-		$update = mysql_query("UPDATE page SET contents = '$content' WHERE id='$edit_id' ");
+
+		$update = $db->query("UPDATE page SET contents = '$content' WHERE id='$edit_id' ");
 		if (!$update) {
 				echo mysql_error();
 			} else {

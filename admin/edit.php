@@ -53,15 +53,23 @@
 						</form>
 
 						<form role="form" method="post"  action="">
-								<h3>Page title</h3>
-								<input type="text" class="form-control" name="title" value="<?php echo $_title;?>" readonly /> 
-								<br/> <br/>  
-							    <textarea name="content" style="cursor:text;" rows="20" cols="40"><?php echo $_content;?></textarea>
-							    <br/> <br/>
+								<h4>Page title</h4>
+								<div class="form-group">
+									<input type="text" class="form-control" name="title" value="<?php echo $_title;?>" readonly /> 
+								</div>
+								<div class="form-group">
+								    <textarea name="content" style="cursor:text;" rows="20" cols="40"><?php echo $_content;?></textarea>
+							    </div>
 							    <input type="hidden" name="edit_id" value="<?php echo $_id; ?>">
-							    <input type="hidden" name="action" value="edited">
-							   <button type="submit" class="btn btn-success" name="submit2" >Update</button>
-							    <?php echo $msg ;?>
+							    <input type="hidden" name="action" value="edited">						   
+						
+						</div>
+						<!-- /.col-lg-8 -->
+						<div class="col-lg-4">
+							<button type="submit" class="btn btn-success" name="submit2" >Update Page</button>
+							<h4><?php echo $msg ;?></h4>						
+						</div>
+
 						</form>
                 </div>
                 <!-- /.col-lg-12 -->
