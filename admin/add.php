@@ -31,8 +31,6 @@
 	
 ?>
 
-<script type="text/javascript" src="tinymce/tinymce.min.js"></script>
-<script type="text/javascript" src="../js/tinymce.js"></script>
 
 <div id="page-wrapper">
             <div class="row">

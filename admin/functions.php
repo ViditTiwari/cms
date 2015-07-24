@@ -28,17 +28,26 @@
 	}
 
 	function find_page_by_id($id, $db){
-		$query = mysql_query("SELECT * FROM page WHERE id=$id" );
-		while ($temp = mysql_fetch_array($query)) {
-				$_id = $temp['id'];
-				$_title = $temp['title'];
-				$_content = $temp['contents'];
+
+		$query = $db->query("SELECT * FROM page WHERE id=$id" );
+		$query = $query->fetchAll(PDO::FETCH_ASSOC);
+		foreach ($query as $row) {
+				$_id = $row['id'];
+				$_title = $row['title'];
+				$_content = $row['contents'];
 			}
+		
 		return array($_id, $_title, $_content);
 	}
 
 	function get_page_and_id($db){
-		$query = mysql_query("SELECT id, title FROM page ORDER BY title");
-		return $query;
+		
+		$query = $db->query("SELECT id, title FROM page ORDER BY title");
+		$query = $query->fetchAll(PDO::FETCH_ASSOC);
+		if (!$query) {
+				return $db->errorInfo();;
+			} else {
+				return $query;
+			}
 	}
 ?>

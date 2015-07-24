@@ -35,6 +35,10 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- tinyMCE Editor -->
+    <script type="text/javascript" src="tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="../js/tinymce.js"></script>
+
 </head>
 
 <body>
