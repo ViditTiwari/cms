@@ -1,5 +1,4 @@
-<?php
-$dbcon = new MySQLi("localhost","root","sinku1795","cvs");
+<?php require('includes/config.php'); 
 ?>
 
 <!DOCTYPE html>
