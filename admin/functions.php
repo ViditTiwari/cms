@@ -1,14 +1,19 @@
 <!-- All Functions -->
 
 <?php 
-	function add_page($title, $content){
+	
+	function add_page($Title, $content, $db){
 		
-		$query = mysql_query("INSERT INTO page (title, contents) VALUES ('$title', '$content')") or die(mysql_error());
+		$query = $db->query("INSERT INTO page (title, contents) VALUES ('$Title', '$content')");
 
-		return "Page Added";
+		if (!$query) {
+				return $db->errorInfo();;
+			} else {
+				return "Published";
+			}
 	}
 
-	function update_page($content, $edit_id){
+	function update_page($content, $edit_id, $db){
 		$update = mysql_query("UPDATE page SET contents = '$content' WHERE id='$edit_id' ");
 		if (!$update) {
 				echo mysql_error();
@@ -17,12 +22,12 @@
 			}
 	}
 
-	function delete_page($id){
+	function delete_page($id, $db){
 		$query = mysql_query("DELETE FROM page WHERE id = $id LIMIT 1");
 		return "Deleted";
 	}
 
-	function find_page_by_id($id){
+	function find_page_by_id($id, $db){
 		$query = mysql_query("SELECT * FROM page WHERE id=$id" );
 		while ($temp = mysql_fetch_array($query)) {
 				$_id = $temp['id'];
@@ -32,7 +37,7 @@
 		return array($_id, $_title, $_content);
 	}
 
-	function get_page_and_id(){
+	function get_page_and_id($db){
 		$query = mysql_query("SELECT id, title FROM page ORDER BY title");
 		return $query;
 	}
