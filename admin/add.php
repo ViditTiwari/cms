@@ -2,6 +2,8 @@
 
 <?php
 	//define page title
+
+	require('header.php');
 	$title = 'Admin'; 
 	$msg ="";
 
@@ -23,7 +25,6 @@
 		}
 	}
 
-	require('header.php');
 	
 ?>
 

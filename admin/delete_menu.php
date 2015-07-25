@@ -1,5 +1,5 @@
 <?php 
-
+require('header.php');
 //define page title
 $title = 'Admin';
 
@@ -14,7 +14,7 @@ if(isset($_POST['delete_sub_menu']))
 
    delete_sub_menu($_POST['sub_menu_name']);
 }
-require('header.php');
+
 
 ?>
         <div id="page-wrapper">

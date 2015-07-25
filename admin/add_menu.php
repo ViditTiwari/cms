@@ -1,6 +1,6 @@
 <?php 
-
 //define page title
+require('header.php');
 $title = 'Admin';
 
 if(isset($_POST['add_main_menu']))
@@ -13,7 +13,7 @@ if(isset($_POST['add_sub_menu']))
     add_sub_menu($_POST['parent'], $_POST['sub_menu_name'], $_POST['sub_menu_link'] );
     
 }
-require('header.php');
+
 
 ?>
         <div id="page-wrapper">
