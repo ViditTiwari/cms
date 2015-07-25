@@ -113,12 +113,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> Archives</a>
-                        </li>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Gallery</a>
-                        </li>
+                        
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Create a New Page<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -131,17 +126,31 @@
                                 <li>
                                     <a href="delete.php">Delete</a>
                                 </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>
+                                
                             </ul>
                             <!-- /.nav-second-level -->
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Footer<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="footer1.php">Footer Block 1</a>
+                                </li>
+                                <li>
+                                    <a href="footer2.php">Footer Block 2</a>
+                                </li>
+                                <li>
+                                    <a href="footer3.php">Footer Block 3</a>
+                                </li>
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Archives</a>
+                        </li>
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Gallery</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Upload<span class="fa arrow"></span></a>
@@ -191,16 +200,3 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
-
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../js/metisMenu.min.js"></script>
-
-
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../js/sb-admin-2.js"></script>

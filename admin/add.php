@@ -2,8 +2,7 @@
 
 <?php
 	require_once('../includes/config.php'); 
-	require_once('functions.php');
-	require('header.php');
+	
 	//if not logged in redirect to login page
 	if(!$user->is_logged_in()){ header('Location: index.php'); } 
 
@@ -28,6 +27,8 @@
 			}
 		}
 	}
+
+	require('header.php');
 	
 ?>
 
@@ -70,4 +71,17 @@
     </div>
     <!-- /#wrapper -->
 
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
 
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../js/metisMenu.min.js"></script>
+
+
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
