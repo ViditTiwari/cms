@@ -99,19 +99,22 @@
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Archives<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Menu<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">etc</a>
+                                    <a href="add_menu.php">Add Menu</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">etc</a>
+                                    <a href="edit_menu.php">Edit Menu</a>
+                                </li>
+                                <li>
+                                    <a href="delete_menu.php">Delete Menu</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="menu.php"><i class="fa fa-table fa-fw"></i> Menu</a>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Archives</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Gallery</a>

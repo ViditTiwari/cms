@@ -11,6 +11,25 @@ function add_sub_menu($parent, $proname, $menu_link)
 	global $db;
 	$sql=$db->query("INSERT INTO sub_menu(m_menu_id,s_menu_name,s_menu_link) VALUES('$parent','$proname','$menu_link')");
 }
+
+function delete_main_menu($menu_name){
+
+	global $db;
+	$sql = $db->query (sprintf ( "DELETE FROM main_menu1 WHERE m_menu_name='%s'", mysql_real_escape_string ( $menu_name)));
+
+// Check for errors
+if (!$sql) {
+  
+  echo "Deleting record failed: (" . $dbcon->errno . ") " . $dbcon->error;
+
+}
+
+}
+function delete_sub_menu($proname)
+{       
+		global $db;
+		$sql = $db->query (sprintf ( "DELETE FROM sub_menu WHERE s_menu_name='%s'", mysql_real_escape_string ( $proname)));
+}
 	
 	function add_page($Title, $content){
 		global $db;
