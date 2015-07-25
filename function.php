@@ -23,7 +23,9 @@
 			foreach ($res_menu as $res_sub) {
 				echo "<li><a href=$res_sub[s_menu_link]> $res_sub[s_menu_name] </a></li>";
 			}
+			echo "</ul>";
 			}
+			echo "</li>";
 		}
 	}
 ?>
