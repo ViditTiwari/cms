@@ -4,52 +4,51 @@ require_once('includes/config_new.php');
 ?>
 
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>CVS</title>
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<title>Education Time</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="css/layout.css" type="text/css" />
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<!-- Custom Theme files -->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- Custom Theme files -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--webfont-->
-<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300|Open+Sans:300italic,400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'>
-<!--//webfont-->
-<!--Animation-->
-<script src="js/wow.min.js"></script>
-<link href="css/animate.css" rel='stylesheet' type='text/css' />
-<script>
-	new WOW().init();
-</script>
-
+<!-- liteAccordion is Homepage Only -->
+<link rel="stylesheet" href="css/liteaccordion.css" type="text/css" />
 </head>
-<body>
-	<div class="header box css3-shadow" id="head">
- 	<div class="container">
-	  <div class="header-top">
-	        <div class="logo wow bounceInLeft" data-wow-delay="0.4s">
-				<a href="#"><img src="images/logo.png" alt=""/></a>
-			 </div>
-		     <div class="h_menu4"><!-- start h_menu4 -->
-				<a class="toggleMenu" href="#">Menu</a>
-				<ul class="nav">
-					<li class="active"><a class="scroll" href="index.html">Home</a></li>
-						<!-- Navigation Menu-->
-						<?php nav_menu(); ?>
-	</ul>
-	</li>	
-				</ul>
-				<script type="text/javascript" src="js/nav.js"></script>
-			</div><!-- end h_menu4 -->
-			
-
-			<div class="clearfix"> </div>
-			
-		  </div><!-- end header_main4 -->
-	</div>
+<body id="top">
+<div class="wrapper row1">
+  <div id="header" class="clear">
+    <div class="fl_left">
+      <h1><a href="index.html">College of Vocational Studies</a></h1>
+      <p>University of Delhi</p>
+    </div>
+    <form action="#" method="post" id="login">
+      <fieldset>
+        <legend>Student Login</legend>
+        <input type="password" />
+        <input type="text" />
+        <div id="forgot">Need <a href="#">Help ?</a> or <a href="#">Forgot Your Details ?</a></div>
+        <input type="image" src="images/sign_in.gif" id="signin" alt="Sign In" />
+      </fieldset>
+    </form>
+  </div>
 </div>
+<!-- ####################################################################################################### -->
+<div class="wrapper row2">
+  <div id="topnav">
+    <ul>
+      <li class="active"><a href="index.html">Homepage</a></li>
+      <li><a href="pages/style-demo.html">Style Demo</a></li>
+      <li><a href="pages/full-width.html">Full Width</a></li>
+      <li><a href="#">DropDown</a>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+        </ul>
+      </li>
+      <li><a href="pages/3-columns.html">3 Columns</a></li>
+      <li class="last"><a href="pages/gallery.html">Gallery</a></li>
+    </ul>
+    <div  class="clear"></div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
