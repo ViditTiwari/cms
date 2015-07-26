@@ -36,17 +36,17 @@ require_once('includes/config_new.php');
   <div id="topnav">
     <ul>
       <li class="active"><a href="index.html">Homepage</a></li>
-      <li><a href="pages/style-demo.html">Style Demo</a></li>
-      <li><a href="pages/full-width.html">Full Width</a></li>
-      <li><a href="#">DropDown</a>
+      <li><a href="pages/style-demo.html">Administration</a></li>
+      <li><a href="pages/full-width.html">Facilities</a></li>
+      <li><a href="#">Academics</a>
         <ul>
           <li><a href="#">Link 1</a></li>
           <li><a href="#">Link 2</a></li>
           <li><a href="#">Link 3</a></li>
         </ul>
       </li>
-      <li><a href="pages/3-columns.html">3 Columns</a></li>
-      <li class="last"><a href="pages/gallery.html">Gallery</a></li>
+      <li><a href="pages/3-columns.html">Courses</a></li>
+      <li class="last"><a href="pages/gallery.html">Contact Us</a></li>
     </ul>
     <div  class="clear"></div>
   </div>

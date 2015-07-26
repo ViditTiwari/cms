@@ -63,7 +63,7 @@
 <!-- ####################################################################################################### -->
 <div class="wrapper">
   <div id="copyright" class="clear">
-    <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">College of Vocational Studies</a></p>
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">College of Vocational Studies</a></p>
     <p class="fl_right">Affliated by <a target="_blank" href="#">University of Delhi</a></p>
   </div>
 </div>
