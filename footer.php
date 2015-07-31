@@ -1,89 +1,98 @@
-<div class="wrapper row5">
-  <div id="footer" class="clear"> 
-    <!-- ####################################################################################################### -->
-    <div class="foot_contact">
-      <h2>University Name Here</h2>
-      <address>
-      Address Line 1<br />
-      Address Line 2<br />
-      Town/City<br />
-      Postcode/Zip
-      </address>
-      <ul>
-        <li><strong>Tel:</strong> xxxxx xxxxxxxxxx</li>
-        <li><strong>Fax:</strong> xxxxx xxxxxxxxxx</li>
-        <li class="last"><strong>Email:</strong> <a href="#">contact@mydomain.com</a></li>
-      </ul>
-    </div>
-    <div class="footbox">
-      <h2>Administration</h2>
-      <ul>
-        <li><a href="#">Disclaimer</a></li>
-        <li><a href="#">Accessibility</a></li>
-        <li><a href="#">Freedom of Information</a></li>
-        <li><a href="#">Website Privacy</a></li>
-        <li><a href="#">Press Release Information</a></li>
-        <li><a href="#">Annual Report</a></li>
-        <li><a href="#">Financial Statements</a></li>
-        <li><a href="#">Job Vacancies</a></li>
-        <li class="last"><a href="#">Semester Dates</a></li>
-      </ul>
-    </div>
-    <div class="footbox">
-      <h2>Link Block 2</h2>
-      <ul>
-        <li><a href="#">Schools and Colleges</a></li>
-        <li><a href="#">Student Activities</a></li>
-        <li><a href="#">Student Affairs</a></li>
-        <li><a href="#">Student Development</a></li>
-        <li><a href="#">Student Financial Services</a></li>
-        <li><a href="#">Student Group Directory</a></li>
-        <li><a href="#">Student Life</a></li>
-        <li><a href="#">International Students</a></li>
-        <li class="last"><a href="#">Global Learning</a></li>
-      </ul>
-    </div>
-    <div class="footbox last">
-      <h2>Link Block 3</h2>
-      <ul>
-        <li><a href="#">Academic Advisory</a></li>
-        <li><a href="#">Academic Assistance</a></li>
-        <li><a href="#">Academic Calendars</a></li>
-        <li><a href="#">Academics Office</a></li>
-        <li><a href="#">Administration</a></li>
-        <li><a href="#">Adult Learners</a></li>
-        <li><a href="#">Alumni Chapters</a></li>
-        <li><a href="#">Alumni Events</a></li>
-        <li class="last"><a href="#">Residential Colleges</a></li>
-      </ul>
-    </div>
-    <!-- ####################################################################################################### --> 
-  </div>
-</div>
-<!-- ####################################################################################################### -->
-<div class="wrapper">
-  <div id="copyright" class="clear">
-    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">College of Vocational Studies</a></p>
-    <p class="fl_right">Affliated by <a target="_blank" href="#">University of Delhi</a></p>
-  </div>
-</div>
-<!-- liteAccordion is Homepage Only --> 
-<script type="text/javascript" src="js/liteaccordion.jquery.min.js"></script> 
-<script type="text/javascript">
-$("#featured_slide").liteAccordion({
-    theme: "os-tpl",
-    containerWidth: 960, // fixed (px)
-    containerHeight: 360, // fixed (px) - overall height of the slider
-    headerWidth: 48, // fixed (px) - slide spine title
-    firstSlide: 1, // displays slide (n) on page load
-	activateOn: "click", // click or mouseover
-    autoPlay: false, // automatically cycle through slides
-    pauseOnHover: true, // pause slides on hover
-    rounded: false, // square or rounded corners
-    enumerateSlides: true, // put numbers on slides
-    slideSpeed: 800, // slide animation speed
-    cycleSpeed: 6000, // time between slide cycles
-});
-</script>
+   <!-- ******FOOTER****** --> 
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="container">
+                <div class="row">
+                 <div class="footer-col col-md-3 col-sm-12 contact">
+                    <div class="footer-col-inner">
+                        <h3>Contact us</h3>
+                        <div class="row">
+                            <p class="adr clearfix col-md-12 col-sm-4">
+                                <i class="fa fa-map-marker pull-left"></i>        
+                                <span class="adr-group pull-left"> 
+
+                                    <span class="street-address">College of Vocational Studies</span><br>
+                                    <span class="region">Triveni</span><br>
+                                    <span class="region">Sheikh Sarai-II</span><br>
+                                    <span class="region">New Delhi</span><br>
+                                    <span class="postal-code">110017</span><br>
+                                    
+                                </span>
+                            </p>
+                            <p class="tel col-md-12 col-sm-4"><i class="fa fa-phone"></i>011 29258544, 011 29258792</p>
+                            <p class="email col-md-12 col-sm-4"><i class="fa fa-envelope"></i><a href="#">du.cvs.principal@gmail.com</a></p>
+                            <p class="email col-md-12 col-sm-4"><i class="fa fa-envelope"></i><a href="#">cvs_1972@yahoo.com</a></p>  
+                        </div> 
+                    </div><!--//footer-col-inner-->            
+                </div><!--//foooter-col-->   
+                <div class="footer-col col-md-3 col-sm-4 about">
+                    <div class="footer-col-inner">
+                        <h3>Footer Block 1</h3>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>A to Z Index</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Admissions</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Bookstore</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Catalog / Classes</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Dining</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Financial Aid</a></li>
+                        </ul>
+                    </div><!--//footer-col-inner-->
+                </div><!--//foooter-col-->
+
+                <div class="footer-col col-md-3 col-sm-4 about">
+                    <div class="footer-col-inner">
+                        <h3>Footer Block 2</h3>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Future Students</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Current Students</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Faculty/Staff</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>International</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Postdocs</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Alumni</a></li>
+                        </ul>
+                    </div><!--//footer-col-inner-->
+                </div><!--//foooter-col-->
+               
+                <div class="footer-col col-md-3 col-sm-4 about">
+                    <div class="footer-col-inner">
+                        <h3>Footer Block 3</h3>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Courses</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Apply Now</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Scholarships</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>FAQs</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>International student enquiries</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Graduation</a></li>
+                        </ul>
+                    </div><!--//footer-col-inner-->
+                </div><!--//foooter-col-->
+               
+                </div>   
+            </div>        
+        </div><!--//footer-content-->
+        <div class="bottom-bar">
+            <div class="container">
+                <div class="row">
+                    <small class="copyright col-md-6 col-sm-12 col-xs-12">Copyright © 2015 College of Vocational Studies | University of Delhi</small>
+                    
+                </div><!--//row-->
+            </div><!--//container-->
+        </div><!--//bottom-bar-->
+    </footer><!--//footer-->
+     
+    <!-- Javascript -->          
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="js/bootstrap-hover-dropdown.min.js"></script> 
+    <script type="text/javascript" src="js/back-to-top.js"></script>
+    <!--   <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="js/jflickrfeed.min.js"></script> 
+    <script type="text/javascript" src="js/main.js"></script>  Javascript -->
+    <script src="js/plugins.js"></script>
+    <script src="js/custom.js"></script>          
 </body>
-</html>
+</html> 
+
