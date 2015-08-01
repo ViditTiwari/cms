@@ -163,10 +163,10 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Upload<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="upload_file.php">File Upload</a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="delete_file.php">Delete File</a>
                                 </li>
                                 <li>
                                     <a href="#">Third Level <span class="fa arrow"></span></a>

@@ -46,11 +46,11 @@ require_once('includes/config_new.php');
             <div class="top-bar">
                 <div class="container">              
                    
-                    <form class="pull-right search-form" role="search">
+                    <form class="pull-right search-form" role="search" method="post" action="search.php">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search the site...">
+                            <input type="text" class="form-control" name="keyword" placeholder="Search the site...">
                         </div>
-                        <button type="submit" class="btn btn-theme">Go</button>
+                        <button type="submit" name="submit" class="btn btn-theme">Go</button>
                     </form>         
                 </div>      
             </div><!--//to-bar-->

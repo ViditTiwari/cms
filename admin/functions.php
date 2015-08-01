@@ -81,4 +81,30 @@ function delete_sub_menu($proname)
 				return $query;
 			}
 	}
+
+	function upload($name, $location, $path, $size, $ext) {
+		global $db;
+		$url = $path."/$name";
+		move_uploaded_file($location, $url);
+		$sql = $db->query("INSERT INTO downloads(name, size, type, url) VALUES('$name', '$size', '$ext', '$url')");
+		return $url;
+	}
+
+	function check_file_name($name, $location, $path, $size, $ext) {
+		// Check if the file name exist already
+		global $db, $flag;
+		$query = $db->query("SELECT name FROM downloads WHERE name = '$name'");
+		$query = $query->fetchAll();
+		if (empty($query)) {
+			return upload($name, $location, $path, $size, $ext);
+		} else {
+			// $newfilename = round(microtime(true).'.'.$ext);
+			$todays_date = date("mdYHis");
+		    $name = str_replace(',', '' , $name);
+		    $new_filename = $todays_date.'_'.$name;
+		    rename($name, $new_filename);
+			return upload($new_filename, $location, $path, $size, $ext);
+		}
+		
+	}
 ?>
