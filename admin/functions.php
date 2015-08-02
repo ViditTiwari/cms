@@ -98,7 +98,6 @@ function delete_sub_menu($proname)
 		if (empty($query)) {
 			return upload($name, $location, $path, $size, $ext);
 		} else {
-			// $newfilename = round(microtime(true).'.'.$ext);
 			$todays_date = date("mdYHis");
 		    $name = str_replace(',', '' , $name);
 		    $new_filename = $todays_date.'_'.$name;

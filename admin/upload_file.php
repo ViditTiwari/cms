@@ -13,7 +13,7 @@
 			$size = $_FILES['file']['size'];
 			$location = $_FILES['file']['tmp_name'];
 			$path = $_SERVER['DOCUMENT_ROOT']."/cms/upload";
-			// print_r($_FILES['file']);
+			 // print_r($_FILES['file']);
 			$extensions = array("pdf", "doc", "xls", "doc", "docx", "odt", "rtf",
 								 "tex", "txt", "wpd", "wps", "csv", "ppt", "pptx", 
 								 "tar", "zip", "xlr", "xlsx", ".7z", "gz", "pkg",
@@ -60,11 +60,10 @@
 								<br>
 									<?php echo "Max. size 5 MB"?> 
 									<br>						
-									<?php gettype($size)?>
-																	
+																										
 						</div>
 					</form> 	
-											
+						 <?php  if($link){ $link = "URL: ".$link; print_r($link);}?>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
