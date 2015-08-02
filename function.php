@@ -8,24 +8,30 @@
 
 	function sub_menu($id){
 		global $db;
-		$query = $db->query("SELECT * FROM sub_menu WHERE m_menu_id=".$id);
+		$query = $db->query("SELECT * FROM sub_menu WHERE m_menu_id=$id");
 		$query = $query->fetchAll();
 		return $query;
 	}
-
+	
 	function nav_menu(){
 		$res = select_table('main_menu1');
-		foreach ($res as $row) {
-			echo "<li><a href=$row[m_menu_link] > $row[m_menu_name] </a>";
-			$res_menu = sub_menu($row['m_menu_id']);
-			if ($res_menu) {
-			echo "<ul>";
-			foreach ($res_menu as $res_sub) {
-				echo "<li><a href=$res_sub[s_menu_link]> $res_sub[s_menu_name] </a></li>";
-			}
-			echo "</ul>";
-			}
-			echo "</li>";
-		}
-	}
+        foreach ($res as $row) {
+                $res_menu = sub_menu($row['m_menu_id']);
+            	if ($res_menu) {
+               		echo "<li class='nav-item dropdown'>";
+		            echo "<a class='dropdown-toggle' data-toggle='dropdown' data-hover='dropdown' data-delay='0' data-close-others='false' href=$row[m_menu_link]>$row[m_menu_name]<i class='fa fa-angle-down'></i></a>";
+		            echo "<ul class='dropdown-menu'>";
+		            foreach ($res_menu as $res_sub) {
+		            	echo "<li><a href=$res_sub[s_menu_link]>$res_sub[s_menu_name]</a></li>";
+		            }        
+		            echo "</ul>";
+		            echo "</li>";
+		     } else {
+                echo "<li class='nav-item'><a href=$row[m_menu_link]>$row[m_menu_name]</a>";
+                echo "</li>";
+            }
+        }                          
+    }
 ?>
+       
+   
