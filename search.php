@@ -48,9 +48,13 @@
                             <article class="course-item">
                                 <div class="page-row">
                                 <?php 
-                                	echo "<h2>You searched for '$keyword':</h2>";
+                                    if ($keyword =="") {
+                                        echo "<h2>Please Enter a keyword to search for...</h2>";
+                                    } else {
                                 	$i =1;
-									foreach ($result as $row) {
+                                    if ($result) {
+                                        echo "<h2>You searched for '$keyword':</h2>";
+                                    	foreach ($result as $row) {
 										$string = strip_tags($row['content']);
 										echo "<h3>$i. <a href=$row[url]>$row[title]</a></h3>\n";
 										echo "(occurrences: $row[occurrences])<br><br>\n";
@@ -62,6 +66,10 @@
 										// echo "<a href=$row[url]>$row[url]</a>\n";
 										$i++;
 									} 
+                                } else {
+                                    echo "<h2>Nothing found for '$keyword'<h2/>";
+                                }
+                                }
 						           ?>    
             				
                                  </div><!--//page-row-->                   
