@@ -423,7 +423,7 @@ blockquote h5 {
 .course-post,
 #disqus_thread,
 .site-footer,
-.widget-item,
+.widget-item-new,
 .widget-sidebar,
 .main-slideshow,
 .widget-main,
@@ -1184,6 +1184,11 @@ input, select {
 .course-post-title {
   margin: 10px 0 20px 0;
 }
+
+.border{ 
+        border-top: 2px solid #6091ba;
+        width: 40%;  
+    } 
 
 /*-----------------------------------------------------------------------------------*/
 /*  FOOTER

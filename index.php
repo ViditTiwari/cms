@@ -41,13 +41,22 @@
         </div>
                 <div class="row">
                     <div class="col-md-12">
+                        
+                        <div class="widget-item-new">
+                        <div class="border"></div>
                         <div class="widget-item">
+                         
+                            
+
                             <h2 class="welcome-text">Introduction</h2>
 
     
 
                             <p><strong>Founded: 1972</strong></br></br>The College Of Vocational Studies, a maintained institution of Delhi University, was founded in 1972. It makes a small beginning in a great change in the field of higher education making it more meaningful and diversified. Through this experiment, we seek to break new ground by bridging the gap between static university education and the social environment.</br></br>Vivamus mattis nibh vitae dui egestas posuere. Maecenas a est at enim blandit interdum. Cras eget ipsum ac nunc tristique tincidunt sit amet nec quam. Vivamus sed suscipit enim, et dignissim tellus.</p>
                         </div> <!-- /.widget-item -->
+                    </div>
+                   
+                    
                     </div> <!-- /.col-md-12 -->
                 </div> <!-- /.row -->
 
@@ -56,6 +65,9 @@
                     <!-- Show Latest Blog News -->
                     <div class="col-md-6">
                         <div class="widget-main">
+                            
+                        <div class="border"></div>
+                        
                             <div class="widget-main-title">
                                 <h4 class="widget-title">Important Links</h4>
                             </div> <!-- /.widget-main-title -->
@@ -117,6 +129,9 @@
                     <!-- Show Latest Events List -->
                     <div class="col-md-6">
                         <div class="widget-main">
+                            
+                        <div class="border"></div>
+                        
                             <div class="widget-main-title">
                                 <h4 class="widget-title">Events</h4>
                             </div> <!-- /.widget-main-title -->
@@ -173,6 +188,7 @@
             <div class="col-md-4">
 
                 <div class="widget-main">
+                    <div class="border"></div>
                             <div class="widget-main-title">
                                 <h4 class="widget-title">Latest News</h4>
                             </div> <!-- /.widget-main-title -->
@@ -224,6 +240,7 @@
 
 
                 <div class="widget-main">
+                    <div class="border"></div>
                     <div class="widget-main-title">
                         <h4 class="widget-title">Principal's Desk</h4>
                     </div>
@@ -271,6 +288,7 @@
                 </div> <!-- /.widget-main -->
 
                 <div class="widget-main">
+                    <div class="border"></div>
                     <div class="widget-main-title">
                         <h4 class="widget-title">Our Gallery</h4>
                     </div>

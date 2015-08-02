@@ -4,15 +4,8 @@
         <div class="content container">
             <div class="page-wrapper">
                 <header class="page-heading clearfix">
-                    <h1 class="heading-title pull-left">Web Design Foundation</h1>
-                    <div class="breadcrumbs pull-right">
-                        <ul class="breadcrumbs-list">
-                            <li class="breadcrumbs-label">You are here:</li>
-                            <li><a href="index.html">Home</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="courses.html">Course</a><i class="fa fa-angle-right"></i></li>
-                            <li class="current">Web Design Foundation</li>
-                        </ul>
-                    </div><!--//breadcrumbs-->
+                    <h1 class="heading-title pull-left">Title Here</h1>
+                    
                 </header> 
                 <div class="page-content">
                     <div class="row page-row">
