@@ -33,8 +33,11 @@ function delete_sub_menu($proname)
 	
 	function add_page($Title, $content){
 		global $db;
-		$query = $db->query("INSERT INTO page (title, contents) VALUES ('$Title', '$content')");
-
+		
+		$query = $db->query("INSERT INTO page (title, contents) VALUES ('$Title', '$content')");	
+		$id = $db->lastInsertId();
+		$url = "sample-page.php?page-id=".$id;
+		$db->query("UPDATE page SET url = '$url' WHERE id='$id'");
 		if (!$query) {
 				return $db->errorInfo();;
 			} else {

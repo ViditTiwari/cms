@@ -1,17 +1,25 @@
 <?php require('header.php');
+    $msg = "";
+    $_id ="";
+    $_title = "";
+    $_content = "";
+    if (isset($_GET['page-id'])) {
+            $id= htmlspecialchars($_GET['page-id']);
+            list($_id, $_title, $_content) = find_page_by_id($id);
+        }   
 ?>
  <!-- ******CONTENT****** --> 
         <div class="content container">
             <div class="page-wrapper">
                 <header class="page-heading clearfix">
-                    <h1 class="heading-title pull-left">Title Here</h1>
+                    <h1 class="heading-title pull-left"><?php echo $_title;?></h1>
                     
                 </header> 
                 <div class="page-content">
                     <div class="row page-row">
                         <div class="course-wrapper col-md-8 col-sm-7">                         
                             <article class="course-item">
-                                <p class="featured-image page-row"><img class="img-responsive" src="assets/images/courses/course-1.jpg" alt=""/></p>
+                              <!--   <p class="featured-image page-row"><img class="img-responsive" src="assets/images/courses/course-1.jpg" alt=""/></p>
                                 <div class="page-row box box-border">
                                     <ul class="list-unstyled no-margin-bottom">
                                         <li><strong>Start date:</strong> <em>24 Sep 2014</em></li>
@@ -19,15 +27,16 @@
                                         <li><strong>Level: </strong> <em>Beginner</em></li>
                                         <li><strong>Location: </strong> <em>Remote(Online)</em></li>
                                     </ul>
-                                </div><!--//page-row-->
+                                </div> --><!--//page-row-->
                                 <div class="page-row">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum pellentesque urna. Phasellus adipiscing et massa et aliquam. Ut odio magna, interdum quis dolor non, tristique vestibulum nisi. Nam accumsan convallis venenatis. Nullam posuere risus odio, in interdum felis venenatis sagittis. Integer malesuada porta fermentum. Sed luctus nibh sed mi auctor imperdiet. Cras et sapien rhoncus, pulvinar dolor sed, tincidunt massa. Nullam fringilla mauris non risus ultricies viverra. Donec a turpis non lorem pulvinar posuere.</p>
+                                    <?php echo $_content;?>
+                                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum pellentesque urna. Phasellus adipiscing et massa et aliquam. Ut odio magna, interdum quis dolor non, tristique vestibulum nisi. Nam accumsan convallis venenatis. Nullam posuere risus odio, in interdum felis venenatis sagittis. Integer malesuada porta fermentum. Sed luctus nibh sed mi auctor imperdiet. Cras et sapien rhoncus, pulvinar dolor sed, tincidunt massa. Nullam fringilla mauris non risus ultricies viverra. Donec a turpis non lorem pulvinar posuere.</p>
             
                                     <p>Nulla facilisi. Aenean interdum iaculis odio, et suscipit lorem euismod et. Sed nec orci suscipit, accumsan mauris nec, vestibulum felis. Nam eu felis sem. Fusce ut odio ipsum. Duis orci ipsum, feugiat ac dignissim in, convallis quis tortor. Mauris semper tortor nec justo adipiscing volutpat. Donec suscipit rhoncus est, vitae pretium purus laoreet et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed iaculis risus felis, sit amet porta urna volutpat vel. Integer vestibulum, neque a condimentum fermentum, est nunc tincidunt nunc, eget sagittis turpis elit nec arcu. Curabitur tempus mauris vitae dignissim vehicula. Fusce vehicula malesuada aliquam.</p>
             
                                     <p>Nullam consequat lectus eget fringilla ultricies. Suspendisse potenti. Morbi in malesuada nibh. Morbi vel tellus eu magna tempor mattis. Praesent ut turpis feugiat, dignissim ipsum et, pharetra orci. Nullam in congue felis. Donec commodo metus metus, at faucibus purus convallis ac. Nullam quis tortor urna. In commodo metus sed tempus venenatis. Integer euismod consectetur lobortis. Mauris blandit in massa in rhoncus. Aliquam sit amet sollicitudin nulla. Ut nec mauris facilisis, pretium enim et, tristique risus. Fusce a ligula in velit congue hendrerit eu eget tortor.</p>    
-                                </div><!--//page-row-->
-                                <div class="tabbed-info page-row">             
+ -->                                </div><!--//page-row-->
+                                 <!-- <div class="tabbed-info page-row">             
                                     <ul class="nav nav-tabs">
                                       <li class="active"><a href="#tab1" data-toggle="tab">Course structure</a></li>
                                       <li><a href="#tab2" data-toggle="tab">Fees</a></li>
@@ -67,7 +76,7 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                        </div><!--//table-responsive-->
+                                        </div> --><!--//table-responsive
                                         </div>
                                         <div class="tab-pane" id="tab2">
                                             <p>Donec suscipit rhoncus est, vitae pretium purus laoreet et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed iaculis risus felis, sit amet porta urna volutpat vel. Integer vestibulum, neque a condimentum fermentum, est nunc tincidunt nunc, eget sagittis turpis elit nec arcu. Curabitur tempus mauris vitae dignissim vehicula. Fusce vehicula malesuada aliquam.</p>
@@ -87,7 +96,7 @@
                                             </ol>
                                         </div>
                                     </div>
-                                </div><!--//tabbed-info-->                     
+                                </div> --><!--//tabbed-info-->                     
                             </article><!--//course-item-->                                              
                         </div><!--//course-wrapper-->
                         <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">     

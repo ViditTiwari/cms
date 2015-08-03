@@ -13,6 +13,19 @@
 		return $query;
 	}
 	
+	function find_page_by_id($id){
+		global $db;
+		$query = $db->query("SELECT * FROM page WHERE id=$id" );
+		$query = $query->fetchAll(PDO::FETCH_ASSOC);
+		foreach ($query as $row) {
+				$_id = $row['id'];
+				$_title = $row['title'];
+				$_content = $row['contents'];
+			}
+		
+		return array($_id, $_title, $_content);
+	}
+	
 	function nav_menu(){
 		$res = select_table('main_menu1');
         foreach ($res as $row) {

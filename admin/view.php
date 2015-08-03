@@ -11,11 +11,6 @@
 ?>
 
 <html>
-<head>
-	<title>Admin</title>
-		<script type="text/javascript" src="tinymce/tinymce.min.js"></script>
-		<script type="text/javascript" src="../js/tinymce.js"></script>
-</head>
 <body>
 
 	<div>
