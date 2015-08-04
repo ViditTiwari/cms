@@ -85,6 +85,21 @@ function delete_sub_menu($proname)
 			}
 	}
 
+	function delete_file($name, $path){
+		global $db;
+		$path = $path."/".$name;
+		if (file_exists($path)) {
+			if (unlink($path)) {
+				$query = $db->query("DELETE FROM downloads WHERE name = '$name' LIMIT 1");
+				return "Success";
+			} else {
+				return "fail";
+			}
+		}
+		
+
+	}
+
 	function upload($name, $location, $path, $size, $ext) {
 		global $db;
 		$url = $path."/$name";
@@ -102,7 +117,7 @@ function delete_sub_menu($proname)
 			return upload($name, $location, $path, $size, $ext);
 		} else {
 			$todays_date = date("mdYHis");
-		    $name = str_replace(',', '' , $name);
+		    // $name = str_replace(',', '' , $name);
 		    $new_filename = $todays_date.'_'.$name;
 		    rename($name, $new_filename);
 			return upload($new_filename, $location, $path, $size, $ext);

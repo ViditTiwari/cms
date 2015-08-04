@@ -32,7 +32,7 @@
                 $res_menu = sub_menu($row['m_menu_id']);
             	if ($res_menu) {
                		echo "<li class='nav-item dropdown'>";
-		            echo "<a class='dropdown-toggle' data-toggle='dropdown' data-hover='dropdown' data-delay='0' data-close-others='false' href=$row[m_menu_link]>$row[m_menu_name]<i class='fa fa-angle-down'></i></a>";
+		            echo "<a class='dropdown-toggle' data-toggle='dropdown' data-hover='dropdown' data-delay='0' data-close-others='false' href=#>$row[m_menu_name]<i class='fa fa-angle-down'></i></a>";
 		            echo "<ul class='dropdown-menu'>";
 		            foreach ($res_menu as $res_sub) {
 		            	echo "<li><a href=$res_sub[s_menu_link]>$res_sub[s_menu_name]</a></li>";

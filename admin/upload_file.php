@@ -13,8 +13,7 @@
 			$size = $_FILES['file']['size'];
 			$location = $_FILES['file']['tmp_name'];
 			$path = $_SERVER['DOCUMENT_ROOT']."/cms/upload";
-			 // print_r($_FILES['file']);
-			$extensions = array("pdf", "doc", "xls", "doc", "docx", "odt", "rtf",
+			 			$extensions = array("pdf", "doc", "xls", "doc", "docx", "odt", "rtf",
 								 "tex", "txt", "wpd", "wps", "csv", "ppt", "pptx", 
 								 "tar", "zip", "xlr", "xlsx", ".7z", "gz", "pkg",
 								 "rar", "zipx" );      
@@ -26,10 +25,12 @@
 			}
 
 			if ($size > 5242880) {
+
 				$errors[] = "File size must be less than 5 MB";
 			}
 
 			if (empty($errors)==true) {
+				
 				$link = check_file_name($name, $location, $path, $size, $ext);
 			
 			} else {
@@ -63,6 +64,8 @@
 																										
 						</div>
 					</form> 	
+					<?php  print_r($_FILES['file']);
+?>
 						 <?php  if($link){ $link = "URL: ".$link; print_r($link);}?>
                 </div>
                 <!-- /.col-lg-12 -->

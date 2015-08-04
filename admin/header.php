@@ -168,24 +168,7 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                                 <li>
                                     <a href="delete_file.php">Delete File</a>
                                 </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
+                                
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
