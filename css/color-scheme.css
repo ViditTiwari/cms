@@ -1,7 +1,7 @@
 /**** Background Colors ****/
 body,
 .lightBtn {
-  background-color: #efefef;
+   background-image: url("../textures/light_wool.png");
 }
 
 .main-slideshow,
@@ -22,7 +22,7 @@ body,
 .contact-map,
 .course-details,
 #disqus_thread {
-  background-color: white;
+  background-color: rgba( 0, 0, 0, 0.03 );
 }
 
 .menu-toggle-btn {
