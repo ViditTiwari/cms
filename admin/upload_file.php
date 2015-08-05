@@ -64,8 +64,7 @@
 																										
 						</div>
 					</form> 	
-					<?php  print_r($_FILES['file']);
-?>
+
 						 <?php  if($link){ $link = "URL: ".$link; print_r($link);}?>
                 </div>
                 <!-- /.col-lg-12 -->

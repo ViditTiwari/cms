@@ -2,19 +2,47 @@
 //define page title
 require('header.php');
 $title = 'Admin';
-
+$msg = $sub_msg = "";
 if(isset($_POST['add_main_menu']))
-{  
-   add_main_menu($_POST['menu_name'], $_POST['mn_link']);
+    {   
+        $link = strtolower($_POST['mn_link']);
+        $link = str_replace(' ', '-', $link);
+        // page for mn_link exist or not.
+        
+        if(page_exist($link)) {
+       // mn_link unique or not
+        
+            if(check_mn($link)) {
+                 add_main_menu($_POST['menu_name'], $link);
+                 $msg = "Menu Added";
+             } else {
+                $msg = "menu link already exist";
+                } 
+        } else {
+               $msg ="No page for this URL, first create a page";
+        }
+    }
+        
+if(isset($_POST['add_sub_menu'])) {
 
-}
-if(isset($_POST['add_sub_menu']))
-{ 
-    add_sub_menu($_POST['parent'], $_POST['sub_menu_name'], $_POST['sub_menu_link'] );
-    
-}
+    $link = strtolower($_POST['sub_menu_link']);
+    $link = str_replace(' ', '-', $link);
+    // page for sub_menu_link exist or not.
 
+    if(page_exist($link)) {
+       // sub_menu_link unique or not
 
+            if(check_mn($link)) {
+                add_sub_menu($_POST['parent'], $_POST['sub_menu_name'], $link);
+                $sub_msg = "Sub Menu Added";
+            } else {
+                $sub_msg = "sub menu link already exist";
+                } 
+        } else {
+               $sub_msg ="No page for this URL, first create a page";
+        }
+   
+ }
 ?>
         <div id="page-wrapper">
             <div class="row">
@@ -46,7 +74,7 @@ if(isset($_POST['add_sub_menu']))
                                      
                                        
                                         <button type="submit" class="btn btn-success" name="add_main_menu">Add main menu</button>
-                                        
+                                        <?php echo $msg;?>
                                        
                                     </form>
                                 </div>
@@ -86,7 +114,7 @@ if(isset($_POST['add_sub_menu']))
                                       
                                        
                                         <button type="submit" name="add_sub_menu" class="btn btn-success">Add Sub-Menu</button>
-                                        
+                                        <?php echo $sub_msg;?>
                                     </form>
                                    
                                 </div>

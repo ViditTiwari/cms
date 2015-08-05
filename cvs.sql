@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2015 at 06:42 PM
+-- Generation Time: Aug 05, 2015 at 09:03 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `downloads` (
   `size` varchar(200) NOT NULL,
   `type` varchar(200) NOT NULL,
   `url` varchar(2100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -66,17 +66,19 @@ CREATE TABLE IF NOT EXISTS `downloads` (
 CREATE TABLE IF NOT EXISTS `main_menu1` (
 `m_menu_id` int(2) NOT NULL,
   `m_menu_name` varchar(20) NOT NULL,
-  `m_menu_link` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
+  `m_menu_link` varchar(2100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `main_menu1`
 --
 
 INSERT INTO `main_menu1` (`m_menu_id`, `m_menu_name`, `m_menu_link`) VALUES
-(54, 'Admissions', ''),
-(55, 'Facilities', ''),
-(56, 'Music', '');
+(57, 'courses', ''),
+(58, 'Admissions', ''),
+(59, 'Facilities', ''),
+(60, 'Contact Us', ''),
+(61, 'About Us', '');
 
 -- --------------------------------------------------------
 
@@ -416,17 +418,17 @@ CREATE TABLE IF NOT EXISTS `page` (
   `title` varchar(255) NOT NULL,
   `contents` text NOT NULL,
   `url` varchar(2100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `page`
 --
 
 INSERT INTO `page` (`id`, `title`, `contents`, `url`) VALUES
-(23, 'About cvs', '<p>Kit is seriously hurt but begins to make a good recovery. Tim decides to intervene in her life and does so by preventing her from meeting her boyfriend, Jimmy (<a title="Tom Hughes (actor)" href="https://en.wikipedia.org/wiki/Tom_Hughes_(actor)">Tom Hughes</a>). When he returns to the present time, he finds Posy has never been born and that he has a son instead. His father explains that travelling back to change things before his children were born would mean those children would not be born. Thus, any events that occurred before Posy''s birth cannot be changed, and Tim must accept the consequences as a normal person would. Tim accepts he cannot change Kit''s life by changing her past but he and Mary help her to change her life in the present. She settles down with an old friend of Tim''s and has a child of her own. Tim and Mary have another child, a boy.</p>', 'https://en.wikipedia.org/wiki/About_Time_(2013_film)'),
-(24, 'Library', '<p>Tim learns that his father has terminal cancer and that time travel cannot change it. His father has known for quite some time, but kept travelling back in time to effectively extend his life and spend more time with his family. He tells Tim to live each day twice in order to be truly happy: the first time, live it as normal, and the second time, live every day again almost exactly the same. The first time with all the tensions and worries that stop us noticing how sweet the world can be, but the second time noticing. Tim follows this advice and also travels back into the past to visit his father whenever he misses him.</p>', 'http://www.google.com'),
-(25, 'Music', '<p>Mary tells Tim she wants a third child. He is reluctant at first because he will not be able to visit his father after the baby is born but agrees. After visiting his father for the following nine months, Tim tells his father that he cannot visit any more. They travel back to when Tim was a small boy, reliving a fond memory of them playing on the beach, and after have a heartfelt, tearful goodbye. Mary gives birth to another baby boy and Tim knows he can never see his father again. After reliving each day, Tim comes to realise that it is better to live each day once, and appreciate everything as if he is living it for the second time. The film ends with Tim leaving Mary in bed and getting his three children ready for school.</p>', 'http://www.fb.com'),
-(26, 'Introduction', '<p>The College Of Vocational Studies, a maintained institution of Delhi University, was founded in 1972. It makes a small beginning in a great change in the field of higher education making it more meaningful and diversified. Through this experiment, we seek to break new ground by bridging the gap between static university education and the social environment.</p>', 'http://www.google.com');
+(23, 'About cvs', '<p>Kit is seriously hurt but begins to make a good recovery. Tim decides to intervene in her life and does so by preventing her from meeting her boyfriend, Jimmy (<a title="Tom Hughes (actor)" href="https://en.wikipedia.org/wiki/Tom_Hughes_(actor)">Tom Hughes</a>). When he returns to the present time, he finds Posy has never been born and that he has a son instead. His father explains that travelling back to change things before his children were born would mean those children would not be born. Thus, any events that occurred before Posy''s birth cannot be changed, and Tim must accept the consequences as a normal person would. Tim accepts he cannot change Kit''s life by changing her past but he and Mary help her to change her life in the present. She settles down with an old friend of Tim''s and has a child of her own. Tim and Mary have another child, a boy.</p>', ''),
+(24, 'Library', '<p>Tim learns that his father has terminal cancer and that time travel cannot change it. His father has known for quite some time, but kept travelling back in time to effectively extend his life and spend more time with his family. He tells Tim to live each day twice in order to be truly happy: the first time, live it as normal, and the second time, live every day again almost exactly the same. The first time with all the tensions and worries that stop us noticing how sweet the world can be, but the second time noticing. Tim follows this advice and also travels back into the past to visit his father whenever he misses him.</p>', ''),
+(25, 'Music', '<p>Mary tells Tim she wants a third child. He is reluctant at first because he will not be able to visit his father after the baby is born but agrees. After visiting his father for the following nine months, Tim tells his father that he cannot visit any more. They travel back to when Tim was a small boy, reliving a fond memory of them playing on the beach, and after have a heartfelt, tearful goodbye. Mary gives birth to another baby boy and Tim knows he can never see his father again. After reliving each day, Tim comes to realise that it is better to live each day once, and appreciate everything as if he is living it for the second time. The film ends with Tim leaving Mary in bed and getting his three children ready for school.</p>', ''),
+(26, 'Introduction', '<p>The College Of Vocational Studies, a maintained institution of Delhi University, was founded in 1972. It makes a small beginning in a great change in the field of higher education making it more meaningful and diversified. Through this experiment, we seek to break new ground by bridging the gap between static university education and the social environment.</p>', '');
 
 -- --------------------------------------------------------
 
@@ -437,20 +439,28 @@ INSERT INTO `page` (`id`, `title`, `contents`, `url`) VALUES
 CREATE TABLE IF NOT EXISTS `sub_menu` (
 `s_menu_id` int(2) NOT NULL,
   `m_menu_id` int(2) NOT NULL,
-  `s_menu_name` varchar(20) NOT NULL,
-  `s_menu_link` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=latin1;
+  `s_menu_name` varchar(30) NOT NULL,
+  `s_menu_link` varchar(2100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `sub_menu`
 --
 
 INSERT INTO `sub_menu` (`s_menu_id`, `m_menu_id`, `s_menu_name`, `s_menu_link`) VALUES
-(58, 52, 'Home', ''),
-(59, 52, 'Vision', ''),
-(60, 52, 'Faculty', ''),
-(61, 53, 'gsdfsdf', ''),
-(62, 53, 'sdfsd', '');
+(63, 57, 'BMS', ''),
+(64, 57, 'English', ''),
+(65, 57, 'B.Com', ''),
+(66, 57, 'Hindi', ''),
+(67, 57, 'Mathematics', ''),
+(68, 58, 'Procedures', ''),
+(69, 58, 'Quota', ''),
+(70, 58, 'Fees', ''),
+(71, 58, 'Information Bulletin', ''),
+(72, 59, 'College Library', ''),
+(74, 59, 'Scholarships', ''),
+(76, 59, 'Other Facilites', ''),
+(77, 59, 'socities & Association', '');
 
 -- --------------------------------------------------------
 
@@ -689,12 +699,12 @@ MODIFY `memberID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT for table `downloads`
 --
 ALTER TABLE `downloads`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=62;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `main_menu1`
 --
 ALTER TABLE `main_menu1`
-MODIFY `m_menu_id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=57;
+MODIFY `m_menu_id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=67;
 --
 -- AUTO_INCREMENT for table `occurrence`
 --
@@ -704,12 +714,12 @@ MODIFY `occurrence_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3
 -- AUTO_INCREMENT for table `page`
 --
 ALTER TABLE `page`
-MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `sub_menu`
 --
 ALTER TABLE `sub_menu`
-MODIFY `s_menu_id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=63;
+MODIFY `s_menu_id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=80;
 --
 -- AUTO_INCREMENT for table `word`
 --
