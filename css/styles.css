@@ -1999,7 +1999,7 @@ ul.custom-list-style li {
   }
   .footer {
     height: auto;
-    margin-top: 30px;
+    margin-top: 60px;
     /* must be the same height as footer */
   }
 }
@@ -2012,18 +2012,24 @@ ul.custom-list-style li {
 
 .college{
   text-align: center;
-  color: #a85770;
-  font-family: 'Merriweather';
-  font-size: 36px;
-  font-variant: small-caps;
-  font-weight: 700;
+  color: #3C566C;
+  font-family: 'Oswald';
+  font-size: 40px;
+  
+  font-weight: 400;
 
 }
 
 .university{
   text-align: center;
-  color: #a85770;
-  font-family: 'Merriweather';
-  font-size: 24px;
+  color: #3C566C;
+  font-family: 'Raleway';
+  font-size: 28px;
+  font-weight: 600;
 
+}
+
+.footer-color
+{
+  color: #fff;
 }

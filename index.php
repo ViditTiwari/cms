@@ -248,10 +248,10 @@
                                 <li>
                                     <div class="prof-list-item clearfix">
                            <div class="prof-thumb">
-                                <img src="images/prof/prof1.jpg" alt="Profesor Name">
+                                <img src="images/pr.jpg" alt="Profesor Name">
                             </div> <!-- /.prof-thumb -->
                             <div class="prof-details">
-                                <h5 class="prof-name-list">Prof. Betty Hunt</h5>
+                                <h5 class="prof-name-list">Dr. Inder Jeet Dagar</h5>
                                 <p class="small-text">Sed ut lectus ac lacus molestie posuere non tincidunt arcu.</p>
                             </div> <!-- /.prof-details -->
                         </div> <!-- /.prof-list-item -->

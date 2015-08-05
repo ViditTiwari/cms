@@ -131,7 +131,10 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                                     <a href="edit.php">Edit Page</a>
                                 </li>
                                 <li>
-                                    <a href="delete.php">Delete</a>
+                                    <a href="view-page.php">View Pages</a>
+                                </li>
+                                <li>
+                                    <a href="delete.php">Delete Page</a>
                                 </li>
                                 
                             </ul>

@@ -5,7 +5,7 @@
                 <div class="row">
                  <div class="footer-col col-md-3 col-sm-12 contact">
                     <div class="footer-col-inner">
-                        <h3>Contact us</h3>
+                        <h3 class="footer-color">Contact us</h3>
                         <div class="row">
                             <p class="adr clearfix col-md-12 col-sm-4">
                                 <i class="fa fa-map-marker pull-left"></i>        
@@ -27,7 +27,7 @@
                 </div><!--//foooter-col-->   
                 <div class="footer-col col-md-3 col-sm-4 about">
                     <div class="footer-col-inner">
-                        <h3>Footer Block 1</h3>
+                        <h3 class="footer-color">Footer Block 1</h3>
                         <ul>
                             <li><a href="#"><i class="fa fa-caret-right"></i>A to Z Index</a></li>
                             <li><a href="#"><i class="fa fa-caret-right"></i>Admissions</a></li>
@@ -41,7 +41,7 @@
 
                 <div class="footer-col col-md-3 col-sm-4 about">
                     <div class="footer-col-inner">
-                        <h3>Footer Block 2</h3>
+                        <h3 class="footer-color">Footer Block 2</h3>
                         <ul>
                             <li><a href="#"><i class="fa fa-caret-right"></i>Future Students</a></li>
                             <li><a href="#"><i class="fa fa-caret-right"></i>Current Students</a></li>
@@ -55,7 +55,7 @@
                
                 <div class="footer-col col-md-3 col-sm-4 about">
                     <div class="footer-col-inner">
-                        <h3>Footer Block 3</h3>
+                        <h3 class="footer-color">Footer Block 3</h3>
                         <ul>
                             <li><a href="#"><i class="fa fa-caret-right"></i>Courses</a></li>
                             <li><a href="#"><i class="fa fa-caret-right"></i>Apply Now</a></li>
