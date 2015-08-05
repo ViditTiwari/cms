@@ -11,8 +11,8 @@
 	if (isset($_POST['action'])) {
 		switch ($_POST['action']) {
 			case 'find':
-				$id = $_POST['post'];
-				list($_id, $_title, $_content) = find_page_by_id($id);
+				$pagename = $_POST['pagename'];
+				list($_id, $_title, $_content) = find_page_by_name($pagename);
 				break;
 			case 'edited':
 				$edit_id = $_POST['edit_id'];
@@ -27,6 +27,11 @@
 ?>
 
 
+
+
+<link href="../css/typeahead.css" rel="stylesheet">
+
+
 <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -37,13 +42,11 @@
 									<h4>Choose Page to Edit</h4>
 										<input type="hidden" name="action" value="find">	
 										<div class="form-group">
-											<?php $result = get_page_and_id(); ?>
-											<select class='form-control' name=post value=''>											
-											<?php foreach ($result as $res){ 
-												echo "<option class='form-control' value=$res[id]>$res[title]</option>";
-											}
-											 ?>
-											</select>
+											<div id="the-basics">
+  
+											<input class="typeahead" type="text" name="pagename" placeholder="Type the page name">
+									
+										</div>
 											
 										</div>
 										<div class="form-group">
@@ -91,6 +94,52 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../js/sb-admin-2.js"></script>
+
+    <script  type="text/javascript" src="../js/typeahead.min.js"></script>
+
+    <script type="text/javascript">
+var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+    var matches, substringRegex;
+
+    // an array that will be populated with substring matches
+    matches = [];
+
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        matches.push(str);
+      }
+    });
+
+    cb(matches);
+  };
+};
+
+<?php $result = get_page_and_id(); ?>
+																					
+											
+var states = [<?php foreach ($result as $res){ 
+				echo " '$res[title]',";
+			}
+		    ?>
+];
+
+$('#the-basics .typeahead').typeahead({
+  hint: true,
+  highlight: true,
+  minLength: 1
+},
+{
+  name: 'states',
+  source: substringMatcher(states)
+});
+
+</script>
 
 </body>
 

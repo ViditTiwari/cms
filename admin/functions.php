@@ -93,9 +93,9 @@ function update_page($content, $edit_id){
 }
 
 // Delete page
-function delete_page($id){
+function delete_page($title){
 	global $db;
-	$query = $db->query("DELETE FROM page WHERE id = $id LIMIT 1");
+	$query = $db->query("DELETE FROM page WHERE id = '$title' LIMIT 1");
 	return "Deleted";
 }
 
@@ -111,6 +111,20 @@ function find_page_by_id($id){
 	
 	return array($_id, $_title, $_content);
 }
+
+function find_page_by_name($pagename){
+	global $db;
+	$query = $db->query("SELECT * FROM page WHERE title= '$pagename'" );
+	$query = $query->fetchAll(PDO::FETCH_ASSOC);
+	foreach ($query as $row) {
+			$_id = $row['id'];
+			$_title = $row['title'];
+			$_content = $row['contents'];
+		}
+	
+	return array($_id, $_title, $_content);
+}
+
 
 function get_page_and_id(){
 	global $db;
