@@ -25,6 +25,19 @@
 		
 		return array($_id, $_title, $_content);
 	}
+
+	function find_page_by_url($page_url){
+		global $db;
+		$query = $db->query("SELECT * FROM page WHERE url='$page_url'" );
+		$query = $query->fetchAll(PDO::FETCH_ASSOC);
+		foreach ($query as $row) {
+				$_id = $row['id'];
+				$_title = $row['title'];
+				$_content = $row['contents'];
+			}
+		
+		return array($_id, $_title, $_content);
+	}
 	
 	function nav_menu(){
 		$res = select_table('main_menu1');
