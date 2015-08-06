@@ -179,4 +179,58 @@ function check_file_name($name, $location, $path, $size, $ext) {
 	}
 	
 }
+
+function add_footer($footer, $pagename){
+	global $db;
+	$no=0;
+	if($footer=='footer1')
+	{
+     $no=1;
+	}
+	else if($footer=='footer2')
+	{
+		$no=2;
+	}
+	else
+	{
+		$no=3;
+	}
+
+	$query = $db->query("SELECT title, url FROM page WHERE title= '$pagename'" );
+	$query = $query->fetchAll(PDO::FETCH_ASSOC);
+	foreach ($query as $row) {
+			
+			$_title = $row['title'];
+			$_url = $row['url'];
+			$db->query("INSERT INTO footer_pages(num,title,url) VALUES ($no,'$_title','$_url')");
+		}
+	
+	return "Page Added to the Footer";
+}
+
+function check_footer_page($footer, $pagename)
+{
+	$col = 'title';
+	$table = 'footer_pages';
+	if (!check_url($table, $col, $pagename)) {	
+		return "This page already exists in Footer";
+	} else {
+		return add_footer($footer, $pagename);
+	}
+}
+
+function delete_footer_page($url){
+
+	global $db;
+	$sql = $db->query (sprintf ( "DELETE FROM footer_pages WHERE url='$url'", mysql_real_escape_string ( $url)));
+
+// Check for errors
+if (!$sql) {
+  
+  echo "Deleting record failed: (" . $dbcon->errno . ") " . $dbcon->error;
+
+}
+
+}
+
 ?>

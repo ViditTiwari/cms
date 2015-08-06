@@ -144,14 +144,12 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Footer<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="footer1.php">Footer Block 1</a>
+                                    <a href="add_footer.php">Add Footer</a>
                                 </li>
                                 <li>
-                                    <a href="footer2.php">Footer Block 2</a>
+                                    <a href="delete_footer.php">Delete Footer</a>
                                 </li>
-                                <li>
-                                    <a href="footer3.php">Footer Block 3</a>
-                                </li>
+                                
                                 
                             </ul>
                             <!-- /.nav-second-level -->
