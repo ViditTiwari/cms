@@ -153,6 +153,19 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                                 
                             </ul>
                             <!-- /.nav-second-level -->
+
+                            <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Important Links<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="add_imp_links.php">Add Important Links</a>
+                                </li>
+                                <li>
+                                    <a href="delete_imp_links.php">Delete Important Links</a>
+                                </li>
+                                
+                                
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-table fa-fw"></i> Archives</a>

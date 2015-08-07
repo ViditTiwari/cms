@@ -233,4 +233,45 @@ if (!$sql) {
 
 }
 
+function check_imp_links_page($pagename)
+{
+	$col = 'title';
+	$table = 'imp_links';
+	if (!check_url($table, $col, $pagename)) {	
+		return "This page already exists in Important Links";
+	} else {
+		return add_imp_links( $pagename);
+	}
+}
+
+function add_imp_links($pagename){
+	global $db;
+
+	$query = $db->query("SELECT title, url FROM page WHERE title= '$pagename'" );
+	$query = $query->fetchAll(PDO::FETCH_ASSOC);
+	foreach ($query as $row) {
+			
+			$_title = $row['title'];
+			$_url = $row['url'];
+			$db->query("INSERT INTO imp_links(title,url) VALUES ('$_title','$_url')");
+		}
+	
+	return "Page Added to the Footer";
+}
+
+function delete_imp_links_page($url){
+
+	global $db;
+	$sql = $db->query (sprintf ( "DELETE FROM imp_links WHERE url='$url'", mysql_real_escape_string ( $url)));
+
+// Check for errors
+if (!$sql) {
+  
+  echo "Deleting record failed: (" . $dbcon->errno . ") " . $dbcon->error;
+
+}
+
+}
+
+
 ?>
