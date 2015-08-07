@@ -171,7 +171,7 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                             <a href="#"><i class="fa fa-table fa-fw"></i> Archives</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Gallery</a>
+                            <a href="gallery.php"><i class="fa fa-edit fa-fw"></i> Gallery</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Upload<span class="fa arrow"></span></a>

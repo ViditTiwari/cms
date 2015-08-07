@@ -24,8 +24,9 @@ require_once('includes/config_new.php');
     <link rel='stylesheet' href='css/bootstrap.min.css'>   
     <!-- Plugins CSS -->    
     <link rel='stylesheet' href='css/font-awesome.css'>
-    
-    
+    <link rel='stylesheet' href='css/flexslider.css'>
+    <link rel='stylesheet' href='css/prettyPhoto.css'>
+
     <link href='css/animate.css' rel='stylesheet' media='screen'>
     <link href='css/style-new.css' rel='stylesheet' media='screen'>
  
