@@ -432,6 +432,10 @@ blockquote h5 {
   margin-top: 30px;
 }
 
+.sidebar{
+  margin-top: 0px;
+}
+
 .event-container,
 .blog-post-inner,
 #blog-author,

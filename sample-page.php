@@ -17,13 +17,14 @@
  <!-- ******CONTENT****** --> 
         <div class="content container">
             <div class="page-wrapper">
-                <header class="page-heading clearfix">
-                    <h1 class="heading-title pull-left"><?php echo $_title;?></h1>
-                    
-                </header> 
+                
                 <div class="page-content">
                     <div class="row page-row">
-                        <div class="course-wrapper col-md-8 col-sm-7">                         
+                        <div class="course-wrapper col-md-8 col-sm-8">    
+                        <header class="page-heading clearfix">
+                    <h1 class="heading-title pull-left"><?php echo $_title;?></h1>
+                    
+                </header>                      
                             <article class="course-item">
                               
                                 <div class="page-row">
@@ -32,11 +33,11 @@
                             </article><!--//course-item-->                                              
                         </div><!--//course-wrapper-->
                         
-                        <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">     
+                        <div class="col-md-4 col-sm-4 ">     
                                         <!-- Here begin Sidebar -->
             
 
-                <div class="widget-main">
+                <div class="widget-main sidebar">
                             <div class="widget-main-title">
                                 <h4 class="widget-title">Latest News</h4>
                             </div> <!-- /.widget-main-title -->
