@@ -2,10 +2,9 @@
 
 <?php
 	//define page title
-
 	require('header.php');
 	$title = 'Admin'; 
-	$msg = $Title = $content = $url = "";
+	$msg = $Title = $content = $url = $index= "";
 	if (isset($_POST['submit'])) {
 		$Title = $_POST['Title'];
 		$content = $_POST['content'];
@@ -22,7 +21,8 @@
 			$table = 'page';
 			$col = 'url';
 			if(check_url($table, $col, $url)){
-				$msg = add_page($Title, $content, $url);
+				list($page_id, $msg) = add_page($Title, $content, $url);
+				$index = Index($page_id);
 			} else {
 				$msg = "URL already exist!";
 			}
@@ -71,7 +71,7 @@
 						<!-- /.col-lg-9 -->
 						<div class="col-lg-3">
 							 <button type="submit" class="btn btn-success" name="submit" >Publish</button>
-							  <h4><?php echo $msg ;?></h4>
+							  <h4><?php echo $msg, $index ;?></h4>
 							 
 						</div>
 					</form>

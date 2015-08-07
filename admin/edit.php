@@ -7,12 +7,13 @@
 	$_id = "";
 	$_title ="";
 	$_content = "";
-
+	$index = "";
 	if (isset($_POST['action'])) {
 		switch ($_POST['action']) {
 			case 'find':
 				$pagename = $_POST['pagename'];
 				list($_id, $_title, $_content) = find_page_by_name($pagename);
+				$query = $db->query("DELETE FROM occurrence WHERE page_id = '$_id'");
 				break;
 			case 'edited':
 				$edit_id = $_POST['edit_id'];
@@ -21,6 +22,11 @@
 				$content = mysql_real_escape_string($content);
 				$edit_id = mysql_real_escape_string($edit_id);
 				$msg = update_page($content, $edit_id);
+				$index = Index($edit_id);
+				// delete indexes for $_id
+				
+
+				// create indexes for $edit_id
 				break;
 		}
 	}	
