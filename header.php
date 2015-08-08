@@ -83,7 +83,8 @@ require_once('includes/config_new.php');
                 </div><!--//navbar-header-->            
                 <div class='navbar-collapse collapse' id='navbar-collapse'>
                     <ul class='nav navbar-nav'>
-                    <li class='active nav-item'><a href='/cms/index.php'>Home</a></li>
+                    <!-- <li class='active nav-item'><a href='/cms/index.php'>Home</a></li> -->
+                        <?php echo "<li class='".Match("index")." nav-item'><a href='/cms/index.php'>Home</a>";?>
                         <?php nav_menu();?>
                     </ul><!--//nav-->
                   </div><!--//navabr-collapse-->
