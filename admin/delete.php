@@ -2,10 +2,15 @@
 	
 	require('header.php');
 	$msg = "";
-
+  $_id = "";
 	if (isset($_POST['action']) == 'delete') {
 		$title = $_POST['title'];
-		$msg = delete_page($title);
+		$query = $db->query("SELECT * FROM page WHERE title = '$title'");
+    foreach ($query->fetchAll() as $row) {
+      $_id = $row['id'];
+    }
+    $query = $db->query("DELETE FROM occurrence WHERE page_id = '$_id'");
+    $msg = delete_page($title);
 	}	
 ?>
 

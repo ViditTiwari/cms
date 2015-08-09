@@ -39,6 +39,14 @@
 		return array($_id, $_title, $_content);
 	}
 	
+	function Match($requestUri){
+
+    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+
+    if ($current_file_name == $requestUri) 
+        return "active";
+	}
+
 	function nav_menu(){
 		$res = select_table('main_menu1');
         foreach ($res as $row) {
@@ -53,7 +61,7 @@
 		            echo "</ul>";
 		            echo "</li>";
 		     } else {
-                echo "<li class='nav-item'><a href=$row[m_menu_link]>$row[m_menu_name]</a>";
+                echo "<li class='".Match($row['m_menu_link'])." nav-item'><a href=$row[m_menu_link]>$row[m_menu_name]</a>";
                 echo "</li>";
             }
         }                          

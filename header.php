@@ -21,16 +21,17 @@ require_once('includes/config_new.php');
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
-    <link rel='stylesheet' href='css/bootstrap.min.css'>   
+    <link rel='stylesheet' href='/cms/css/bootstrap.min.css'>   
     <!-- Plugins CSS -->    
-    <link rel='stylesheet' href='css/font-awesome.css'>
-    
-    
-    <link href='css/animate.css' rel='stylesheet' media='screen'>
-    <link href='css/style-new.css' rel='stylesheet' media='screen'>
+    <link rel='stylesheet' href='/cms/css/font-awesome.css'>
+    <link rel='stylesheet' href='/cms/css/flexslider.css'>
+    <link rel='stylesheet' href='/cms/css/prettyPhoto.css'>
+
+    <link href='/cms/css/animate.css' rel='stylesheet' media='screen'>
+    <link href='/cms/css/style-new.css' rel='stylesheet' media='screen'>
  
     <!-- Theme CSS -->  
-    <link id='theme-style' rel='stylesheet' href='css/styles.css'>
+    <link id='theme-style' rel='stylesheet' href='/cms/css/styles.css'>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'></script>
@@ -83,7 +84,8 @@ require_once('includes/config_new.php');
                 </div><!--//navbar-header-->            
                 <div class='navbar-collapse collapse' id='navbar-collapse'>
                     <ul class='nav navbar-nav'>
-                    <li class='active nav-item'><a href='index.php'>Home</a></li>
+                    <!-- <li class='active nav-item'><a href='/cms/index.php'>Home</a></li> -->
+                        <?php echo "<li class='".Match("index")." nav-item'><a href='/cms/index.php'>Home</a>";?>
                         <?php nav_menu();?>
                     </ul><!--//nav-->
                   </div><!--//navabr-collapse-->
