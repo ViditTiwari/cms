@@ -95,7 +95,7 @@ function update_page($content, $edit_id){
 // Delete page
 function delete_page($title){
 	global $db;
-	$query = $db->query("DELETE FROM page WHERE id = '$title' LIMIT 1");
+	$query = $db->query("DELETE FROM page WHERE title = '$title' LIMIT 1");
 	return "Deleted";
 }
 
@@ -263,6 +263,46 @@ function delete_imp_links_page($url){
 
 	global $db;
 	$sql = $db->query (sprintf ( "DELETE FROM imp_links WHERE url='$url'", mysql_real_escape_string ( $url)));
+
+// Check for errors
+if (!$sql) {
+  
+  echo "Deleting record failed: (" . $dbcon->errno . ") " . $dbcon->error;
+
+}
+
+}
+
+function check_events_page($pagename, $description, $date)
+{
+	$col = 'title';
+	$table = 'events';
+	if (!check_url($table, $col, $pagename)) {	
+		return "This page already exists in Important Links";
+	} else {
+		return add_events($pagename, $description, $date);
+	}
+}
+
+function add_events($pagename, $description, $date){
+	global $db;
+
+	$query = $db->query("SELECT title, url FROM page WHERE title= '$pagename'" );
+	$query = $query->fetchAll(PDO::FETCH_ASSOC);
+	foreach ($query as $row) {
+			
+			$_title = $row['title'];
+			$_url = $row['url'];
+			$db->query("INSERT INTO events(event_date, description,title,url) VALUES ('$date', '$description', '$_title','$_url')");
+		}
+	
+	return "Page Added to the Events";
+}
+
+function delete_events($url){
+
+	global $db;
+	$sql = $db->query (sprintf ( "DELETE FROM events WHERE url='$url'", mysql_real_escape_string ( $url)));
 
 // Check for errors
 if (!$sql) {

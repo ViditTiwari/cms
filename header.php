@@ -55,6 +55,7 @@ require_once('includes/config_new.php');
             </div><!--//to-bar-->
             <div class='header-main container'>
                 <div class='logo col-md-2 col-sm-2'>
+                    <img src="images/logo.jpg">
                     
                 </div><!--//logo-->           
                 <div class='col-md-8 col-sm-8'>
