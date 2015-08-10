@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2015 at 09:03 AM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: Aug 10, 2015 at 06:22 PM
+-- Server version: 5.5.36
+-- PHP Version: 5.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,14 +27,15 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `admin` (
-`memberID` int(11) NOT NULL,
+  `memberID` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `password` varchar(60) NOT NULL,
   `email` varchar(255) NOT NULL,
   `active` varchar(255) NOT NULL,
   `resetToken` varchar(255) DEFAULT NULL,
-  `resetComplete` varchar(3) DEFAULT 'No'
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `resetComplete` varchar(3) DEFAULT 'No',
+  PRIMARY KEY (`memberID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `admin`
@@ -50,12 +51,63 @@ INSERT INTO `admin` (`memberID`, `username`, `password`, `email`, `active`, `res
 --
 
 CREATE TABLE IF NOT EXISTS `downloads` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(1000) NOT NULL,
   `size` varchar(200) NOT NULL,
   `type` varchar(200) NOT NULL,
-  `url` varchar(2100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `url` varchar(2100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE IF NOT EXISTS `events` (
+  `event_date` date NOT NULL,
+  `description` varchar(1024) NOT NULL,
+  `title` varchar(256) NOT NULL,
+  `url` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`event_date`, `description`, `title`, `url`) VALUES
+('0000-00-00', 'Hey', 'Introduction', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `footer_pages`
+--
+
+CREATE TABLE IF NOT EXISTS `footer_pages` (
+  `num` int(11) NOT NULL,
+  `title` varchar(256) NOT NULL,
+  `url` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `footer_pages`
+--
+
+INSERT INTO `footer_pages` (`num`, `title`, `url`) VALUES
+(1, 'About cvs', 'hello');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `imp_links`
+--
+
+CREATE TABLE IF NOT EXISTS `imp_links` (
+  `title` varchar(256) NOT NULL,
+  `url` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -64,10 +116,11 @@ CREATE TABLE IF NOT EXISTS `downloads` (
 --
 
 CREATE TABLE IF NOT EXISTS `main_menu1` (
-`m_menu_id` int(2) NOT NULL,
+  `m_menu_id` int(2) NOT NULL AUTO_INCREMENT,
   `m_menu_name` varchar(20) NOT NULL,
-  `m_menu_link` varchar(2100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
+  `m_menu_link` varchar(2100) NOT NULL,
+  PRIMARY KEY (`m_menu_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=62 ;
 
 --
 -- Dumping data for table `main_menu1`
@@ -83,14 +136,27 @@ INSERT INTO `main_menu1` (`m_menu_id`, `m_menu_name`, `m_menu_link`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `news`
+--
+
+CREATE TABLE IF NOT EXISTS `news` (
+  `description` varchar(2048) NOT NULL,
+  `title` varchar(256) NOT NULL,
+  `url` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `occurrence`
 --
 
 CREATE TABLE IF NOT EXISTS `occurrence` (
-`occurrence_id` int(10) unsigned NOT NULL,
+  `occurrence_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `word_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `page_id` int(10) unsigned NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=310 DEFAULT CHARSET=latin1;
+  `page_id` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`occurrence_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=310 ;
 
 --
 -- Dumping data for table `occurrence`
@@ -414,21 +480,20 @@ INSERT INTO `occurrence` (`occurrence_id`, `word_id`, `page_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `page` (
-`id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `contents` text NOT NULL,
-  `url` varchar(2100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
+  `url` varchar(2100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `page`
 --
 
 INSERT INTO `page` (`id`, `title`, `contents`, `url`) VALUES
-(23, 'About cvs', '<p>Kit is seriously hurt but begins to make a good recovery. Tim decides to intervene in her life and does so by preventing her from meeting her boyfriend, Jimmy (<a title="Tom Hughes (actor)" href="https://en.wikipedia.org/wiki/Tom_Hughes_(actor)">Tom Hughes</a>). When he returns to the present time, he finds Posy has never been born and that he has a son instead. His father explains that travelling back to change things before his children were born would mean those children would not be born. Thus, any events that occurred before Posy''s birth cannot be changed, and Tim must accept the consequences as a normal person would. Tim accepts he cannot change Kit''s life by changing her past but he and Mary help her to change her life in the present. She settles down with an old friend of Tim''s and has a child of her own. Tim and Mary have another child, a boy.</p>', ''),
-(24, 'Library', '<p>Tim learns that his father has terminal cancer and that time travel cannot change it. His father has known for quite some time, but kept travelling back in time to effectively extend his life and spend more time with his family. He tells Tim to live each day twice in order to be truly happy: the first time, live it as normal, and the second time, live every day again almost exactly the same. The first time with all the tensions and worries that stop us noticing how sweet the world can be, but the second time noticing. Tim follows this advice and also travels back into the past to visit his father whenever he misses him.</p>', ''),
 (25, 'Music', '<p>Mary tells Tim she wants a third child. He is reluctant at first because he will not be able to visit his father after the baby is born but agrees. After visiting his father for the following nine months, Tim tells his father that he cannot visit any more. They travel back to when Tim was a small boy, reliving a fond memory of them playing on the beach, and after have a heartfelt, tearful goodbye. Mary gives birth to another baby boy and Tim knows he can never see his father again. After reliving each day, Tim comes to realise that it is better to live each day once, and appreciate everything as if he is living it for the second time. The film ends with Tim leaving Mary in bed and getting his three children ready for school.</p>', ''),
-(26, 'Introduction', '<p>The College Of Vocational Studies, a maintained institution of Delhi University, was founded in 1972. It makes a small beginning in a great change in the field of higher education making it more meaningful and diversified. Through this experiment, we seek to break new ground by bridging the gap between static university education and the social environment.</p>', '');
+(26, 'Introduction', '<p>no</p>', '');
 
 -- --------------------------------------------------------
 
@@ -437,11 +502,12 @@ INSERT INTO `page` (`id`, `title`, `contents`, `url`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `sub_menu` (
-`s_menu_id` int(2) NOT NULL,
+  `s_menu_id` int(2) NOT NULL AUTO_INCREMENT,
   `m_menu_id` int(2) NOT NULL,
   `s_menu_name` varchar(30) NOT NULL,
-  `s_menu_link` varchar(2100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
+  `s_menu_link` varchar(2100) NOT NULL,
+  PRIMARY KEY (`s_menu_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=78 ;
 
 --
 -- Dumping data for table `sub_menu`
@@ -469,9 +535,10 @@ INSERT INTO `sub_menu` (`s_menu_id`, `m_menu_id`, `s_menu_name`, `s_menu_link`) 
 --
 
 CREATE TABLE IF NOT EXISTS `word` (
-`word_id` int(10) unsigned NOT NULL,
-  `word_word` varchar(50) NOT NULL DEFAULT ''
-) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=latin1;
+  `word_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `word_word` varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (`word_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=162 ;
 
 --
 -- Dumping data for table `word`
@@ -640,91 +707,6 @@ INSERT INTO `word` (`word_id`, `word_word`) VALUES
 (160, 'beginning'),
 (161, 'meaningful');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
- ADD PRIMARY KEY (`memberID`);
-
---
--- Indexes for table `downloads`
---
-ALTER TABLE `downloads`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `main_menu1`
---
-ALTER TABLE `main_menu1`
- ADD PRIMARY KEY (`m_menu_id`);
-
---
--- Indexes for table `occurrence`
---
-ALTER TABLE `occurrence`
- ADD PRIMARY KEY (`occurrence_id`);
-
---
--- Indexes for table `page`
---
-ALTER TABLE `page`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sub_menu`
---
-ALTER TABLE `sub_menu`
- ADD PRIMARY KEY (`s_menu_id`);
-
---
--- Indexes for table `word`
---
-ALTER TABLE `word`
- ADD PRIMARY KEY (`word_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-MODIFY `memberID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `downloads`
---
-ALTER TABLE `downloads`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `main_menu1`
---
-ALTER TABLE `main_menu1`
-MODIFY `m_menu_id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=67;
---
--- AUTO_INCREMENT for table `occurrence`
---
-ALTER TABLE `occurrence`
-MODIFY `occurrence_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=310;
---
--- AUTO_INCREMENT for table `page`
---
-ALTER TABLE `page`
-MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=44;
---
--- AUTO_INCREMENT for table `sub_menu`
---
-ALTER TABLE `sub_menu`
-MODIFY `s_menu_id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=80;
---
--- AUTO_INCREMENT for table `word`
---
-ALTER TABLE `word`
-MODIFY `word_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=162;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
