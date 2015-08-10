@@ -81,19 +81,19 @@
     </footer><!--//footer-->
      
     <!-- Javascript -->          
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script> 
-    <script type="text/javascript" src="js/bootstrap-hover-dropdown.min.js"></script> 
-    <script type="text/javascript" src="js/back-to-top.js"></script>
-    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="/cms/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/cms/js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/cms/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="/cms/js/bootstrap-hover-dropdown.min.js"></script> 
+    <script type="text/javascript" src="/cms/js/back-to-top.js"></script>
+    <script type="text/javascript" src="/cms/js/jquery.prettyPhoto.js"></script>
     <!--<script type="text/javascript" src="js/jquery.placeholder.js"></script>
  
     <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="js/jflickrfeed.min.js"></script> 
     <script type="text/javascript" src="js/main.js"></script> -->
-    <script type="text/javascript" src="js/plugins.js"></script>
-    <script type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript" src="/cms/js/plugins.js"></script>
+    <script type="text/javascript" src="/cms/js/custom.js"></script>
 
     <script type="text/javascript" charset="utf-8">
     $(document).ready(function(){

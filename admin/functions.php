@@ -46,6 +46,71 @@ function add_page($Title, $content, $url){
 		}
 }
 
+function get_sub_menu(){
+	global $db;
+	$query = $db->query("SELECT s_menu_name FROM sub_menu ORDER BY s_menu_name");
+	$query = $query->fetchAll(PDO::FETCH_ASSOC);
+	if (!$query) {
+			return $db->errorInfo();;
+		} else {
+			return $query;
+		}
+}
+
+function get_main_menu(){
+	global $db;
+	$query = $db->query("SELECT m_menu_name FROM main_menu1 ORDER BY m_menu_name");
+	$query = $query->fetchAll(PDO::FETCH_ASSOC);
+	if (!$query) {
+			return $db->errorInfo();;
+		} else {
+			return $query;
+		}
+}
+// Find submenu id
+function find_submenu_id($name){
+	global $db;
+	$query = $db->query("SELECT * FROM sub_menu WHERE s_menu_name='$name'" );
+	$query = $query->fetchAll(PDO::FETCH_ASSOC);
+	foreach ($query as $row) {
+			$_id = $row['s_menu_id'];
+		}
+	return $_id;
+}
+
+// Find Main Menu by Id
+function find_menu_id($name){
+	global $db;
+	$query = $db->query("SELECT * FROM main_menu1 WHERE m_menu_name='$name'" );
+	$query = $query->fetchAll(PDO::FETCH_ASSOC);
+	foreach ($query as $row) {
+			$_id = $row['m_menu_id'];
+		}
+	
+	return $_id;
+}
+
+// Update main menu
+function update_mainmenu($new, $id){
+	global $db;
+	$query = $db->query("UPDATE main_menu1 SET m_menu_name = '$new' WHERE m_menu_id= '$id'");
+	if (!$query) {
+			echo mysql_error();
+		} else {
+			return "Menu Updated";
+		}
+}
+// Update sub menu
+function update_submenu($new, $id){
+	global $db;
+	$query = $db->query("UPDATE sub_menu SET s_menu_name = '$new' WHERE s_menu_id= '$id'");
+	if (!$query) {
+			echo mysql_error();
+		} else {
+			return "Sub Menu Updated";
+		}
+}
+
 // Check whether url exists in menu and page table
 function check_url($table, $col, $link){
 	global $db;

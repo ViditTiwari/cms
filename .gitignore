@@ -63,3 +63,6 @@ includes/config.php
 includes/config.php
 includes/config_new.php
 includes/config_new.php
+function.php
+includes/config.php
+includes/config_new.php
