@@ -314,6 +314,46 @@ if (!$sql) {
 
 }
 
+function check_news_page($pagename, $description)
+{
+	$col = 'title';
+	$table = 'news';
+	if (!check_url($table, $col, $pagename)) {	
+		return "This page already exists in Latest News";
+	} else {
+		return add_news($pagename, $description);
+	}
+}
+
+function add_news($pagename, $description){
+	global $db;
+
+	$query = $db->query("SELECT title, url FROM page WHERE title= '$pagename'" );
+	$query = $query->fetchAll(PDO::FETCH_ASSOC);
+	foreach ($query as $row) {
+			
+			$_title = $row['title'];
+			$_url = $row['url'];
+			$db->query("INSERT INTO news(description,title,url) VALUES ('$description', '$_title','$_url')");
+		}
+	
+	return "Page Added to the Latest News";
+}
+
+function delete_news($url){
+
+	global $db;
+	$sql = $db->query (sprintf ( "DELETE FROM news WHERE url='$url'", mysql_real_escape_string ( $url)));
+
+// Check for errors
+if (!$sql) {
+  
+  echo "Deleting record failed: (" . $dbcon->errno . ") " . $dbcon->error;
+
+}
+
+}
+
 
 function Index($page_id){
 		
