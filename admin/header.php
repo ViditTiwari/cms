@@ -140,19 +140,21 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
                          <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Footer<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Latest News<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="add_footer.php">Add Footer</a>
+                                    <a href="add_news.php">Add Latest News</a>
                                 </li>
                                 <li>
-                                    <a href="delete_footer.php">Delete Footer</a>
+                                    <a href="delete_news.php">Delete Latest News</a>
                                 </li>
                                 
                                 
                             </ul>
-                            <!-- /.nav-second-level -->
+                        </li>
+
 
                             <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Important Links<span class="fa arrow"></span></a>
@@ -167,6 +169,34 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                                 
                             </ul>
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Events<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="add_events.php">Add Events</a>
+                                </li>
+                                <li>
+                                    <a href="delete_events.php">Delete Events</a>
+                                </li>
+                                
+                                
+                            </ul>
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Footer<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="add_footer.php">Add Footer</a>
+                                </li>
+                                <li>
+                                    <a href="delete_footer.php">Delete Footer</a>
+                                </li>
+                                
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+
                         <li>
                             <a href="#"><i class="fa fa-table fa-fw"></i> Archives</a>
                         </li>
