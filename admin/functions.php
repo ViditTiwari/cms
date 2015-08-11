@@ -223,7 +223,7 @@ function check_footer_page($footer, $pagename)
 function delete_footer_page($url){
 
 	global $db;
-	$sql = $db->query (sprintf ( "DELETE FROM footer_pages WHERE url='$url'", mysql_real_escape_string ( $url)));
+	$sql = $db->query (sprintf ( "DELETE FROM footer_pages WHERE url='%s'", mysql_real_escape_string ( $url)));
 
 // Check for errors
 if (!$sql) {
@@ -263,7 +263,7 @@ function add_imp_links($pagename){
 function delete_imp_links_page($url){
 
 	global $db;
-	$sql = $db->query (sprintf ( "DELETE FROM imp_links WHERE url='$url'", mysql_real_escape_string ( $url)));
+	$sql = $db->query (sprintf ( "DELETE FROM imp_links WHERE url='%s'", mysql_real_escape_string ( $url)));
 
 // Check for errors
 if (!$sql) {
@@ -303,7 +303,7 @@ function add_events($pagename, $description, $date){
 function delete_events($url){
 
 	global $db;
-	$sql = $db->query (sprintf ( "DELETE FROM events WHERE url='$url'", mysql_real_escape_string ( $url)));
+	$sql = $db->query (sprintf ( "DELETE FROM events WHERE url='%s'", mysql_real_escape_string ( $url)));
 
 // Check for errors
 if (!$sql) {
@@ -343,7 +343,7 @@ function add_news($pagename, $description){
 function delete_news($url){
 
 	global $db;
-	$sql = $db->query (sprintf ( "DELETE FROM news WHERE url='$url'", mysql_real_escape_string ( $url)));
+	$sql = $db->query (sprintf ( "DELETE FROM news WHERE url='%s'", mysql_real_escape_string ( $url)));
 
 // Check for errors
 if (!$sql) {
