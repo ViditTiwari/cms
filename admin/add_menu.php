@@ -19,7 +19,19 @@ if(isset($_POST['add_main_menu']))
                 $msg = "menu link already exist";
                 } 
         } else {
-               $msg ="No page for this URL, first create a page";
+                
+                if (check_dropdown($link)) {
+                    if (check_menu_name($_POST['menu_name'])) {
+                        add_main_menu($_POST['menu_name'], $link);
+                        $msg = "Menu Added";    
+                    } else {
+                        $msg = "Menu with this name already exist!";
+                    }
+                    
+                } else {
+                    $msg = "Type #, if you want to create submenu also";
+                }
+              
         }
     }
         

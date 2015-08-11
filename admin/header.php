@@ -61,7 +61,7 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Howdy, Admin</a>
+                <a class="navbar-brand" href="index.php">Howdy, Admin</a>
             </div>
             <!-- /.navbar-header -->
 

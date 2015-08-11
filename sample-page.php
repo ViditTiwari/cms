@@ -3,6 +3,7 @@
     $_id ="";
     $_title = "";
     $_content = "";
+    
     if (isset($_GET['page'])) {
             $page_url= htmlspecialchars($_GET['page']);
             list($_id, $_title, $_content) = find_page_by_url($page_url);
