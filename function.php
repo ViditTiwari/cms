@@ -35,15 +35,12 @@
 				$_title = $row['title'];
 				$_content = $row['contents'];
 			}
-		
 		return array($_id, $_title, $_content);
 	}
 	
 	function Match($requestUri){
-
-    $current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
-
-    if ($current_file_name == $requestUri) 
+	$current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+	if ($current_file_name == $requestUri) 
         return "active";
 	}
 
@@ -52,7 +49,7 @@
         foreach ($res as $row) {
                 $res_menu = sub_menu($row['m_menu_id']);
             	if ($res_menu) {
-               		echo "<li class='nav-item dropdown'>";
+            		echo "<li class='nav-item dropdown'>";
 		            echo "<a class='dropdown-toggle' data-toggle='dropdown' data-hover='dropdown' data-delay='0' data-close-others='false' href=#>$row[m_menu_name]<i class='fa fa-angle-down'></i></a>";
 		            echo "<ul class='dropdown-menu'>";
 		            foreach ($res_menu as $res_sub) {

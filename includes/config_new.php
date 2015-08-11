@@ -4,9 +4,9 @@ session_start();
 
 //database credentials
 define('DBHOST','localhost');
-define('DBUSER','username');
-define('DBPASS','password');
-define('DBNAME','dbname');
+define('DBUSER','root');
+define('DBPASS','sinku1795');
+define('DBNAME','cvs');
 
 //application address
 define('DIR','http://domain.com/');

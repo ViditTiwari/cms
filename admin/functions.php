@@ -16,8 +16,10 @@ function add_sub_menu($parent, $proname, $menu_link)
 function delete_main_menu($menu_name){
 
 	global $db;
-	$sql = $db->query (sprintf ( "DELETE FROM main_menu1 WHERE m_menu_name='%s'", mysql_real_escape_string ( $menu_name)));
+	$id = find_menu_id($menu_name);
 
+	$sql = $db->query (sprintf ( "DELETE FROM main_menu1 WHERE m_menu_name='%s'", mysql_real_escape_string ( $menu_name)));
+	$db->query("DELETE FROM sub_menu WHERE m_menu_id = $id");
 // Check for errors
 if (!$sql) {
   
@@ -69,7 +71,9 @@ function get_main_menu(){
 }
 // Find submenu id
 function find_submenu_id($name){
+
 	global $db;
+
 	$query = $db->query("SELECT * FROM sub_menu WHERE s_menu_name='$name'" );
 	$query = $query->fetchAll(PDO::FETCH_ASSOC);
 	foreach ($query as $row) {
@@ -123,11 +127,30 @@ function check_url($table, $col, $link){
 	}
 }
 
+function check_menu_name($name){
+	global $db;
+	$sql =$db->query("SELECT * FROM main_menu1 WHERE m_menu_name = '$name'");
+	$sql = $sql->fetchAll();
+	if ($sql) {
+		return 0;
+	} else {
+		return 1;
+	}
+}
+
 // Check a page with given menu url exists or not, if not then ask create page first.
 function page_exist($link){
 	$col = 'url';
 	$table = 'page';
 	if (!check_url($table, $col, $link)) {	
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+function check_dropdown($link){
+	if ($link == "#") {
 		return 1;
 	} else {
 		return 0;

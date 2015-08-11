@@ -12,7 +12,9 @@
 				$_id = find_menu_id($old_main_menu);
 				break;
 			case 'edit_sub':
-				$old_sub_name = $_POST['sub_menu'];
+			    
+				$old_sub_menu= $_POST['sub_menu'];
+				
 				$_id1 = find_submenu_id($old_sub_menu);
 				break;
 			case 'update_main':
@@ -90,7 +92,7 @@
       								<input class="form-control" type="text" name="new_sub_name" value="<?php echo $old_sub_menu;?>">
       							</div>
       							<input type="submit" class="btn btn-success" name="submit" value="Update">
-											
+											 <?php echo $msg;?>
       					</form>
       					</div>
       
@@ -116,6 +118,55 @@
 
     <script  type="text/javascript" src="../js/typeahead.min.js"></script>
      <script type="text/javascript">
+
+var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+    var matches, substringRegex;
+
+    // an array that will be populated with substring matches
+    matches = [];
+
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        matches.push(str);
+      }
+    });
+
+    cb(matches);
+  };
+};
+
+<?php 
+	  $result1 = get_sub_menu();
+ ?>
+																					
+
+var states1 = [<?php foreach ($result1 as $res1){ 
+				echo " '$res1[s_menu_name]',";
+			}
+		    ?>
+];
+
+
+$('#the-basics1 .typeahead').typeahead({
+  hint: true,
+  highlight: true,
+  minLength: 1
+},
+{
+  name: 'states1',
+  source: substringMatcher(states1)
+});
+
+</script>
+
+<script type="text/javascript">
+     
 var substringMatcher = function(strs) {
   return function findMatches(q, cb) {
     var matches, substringRegex;
@@ -139,7 +190,7 @@ var substringMatcher = function(strs) {
 };
 
 <?php $result = get_main_menu(); 
-	  $result1 = get_sub_menu();
+	  
  ?>
 																					
 											
@@ -149,11 +200,7 @@ var states = [<?php foreach ($result as $res){
 		    ?>
 ];
 
-var states1 = [<?php foreach ($result1 as $res1){ 
-				echo " '$res1[s_menu_name]',";
-			}
-		    ?>
-];
+
 
 $('#the-basics .typeahead').typeahead({
   hint: true,
@@ -165,15 +212,6 @@ $('#the-basics .typeahead').typeahead({
   source: substringMatcher(states)
 });
 
-$('#the-basics1 .typeahead').typeahead({
-  hint: true,
-  highlight: true,
-  minLength: 1
-},
-{
-  name: 'states1',
-  source: substringMatcher(states1)
-});
 
 </script>
 
