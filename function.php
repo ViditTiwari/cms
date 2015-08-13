@@ -61,7 +61,7 @@
                 echo "<li class='".Match($row['m_menu_link'])." nav-item'><a href=$row[m_menu_link]>$row[m_menu_name]</a>";
                 echo "</li>";
             }
-        }   
+        }  
 
     function get_month($key){
     	switch ($key) {
@@ -111,9 +111,8 @@
             $month = array_unique($month);
             asort($month);
     		foreach ($month as $key) {
-                echo "<ul><li><a href='archive_month.php?year=$year&month=$key'>".get_month($key)."</a>(".$occurences[$key].")</li></ul>";
-    			
-    		}
+                echo "<ul><li><a href='archive/$year/$key'>".get_month($key)."</a>(".$occurences[$key].")</li></ul>";
+    			}
     	}
  
     }
