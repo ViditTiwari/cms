@@ -345,7 +345,7 @@ function add_imp_links($pagename){
 			$db->query("INSERT INTO imp_links(title,url) VALUES ('$_title','$_url')");
 		}
 	
-	return "Page Added to the Footer";
+	return "Page Added to the Important links";
 }
 
 function delete_imp_links_page($url){
