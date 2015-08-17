@@ -1,46 +1,15 @@
 <?php require('header.php');
-?>
-<?php
-	
-	if (isset($_POST['submit'])) {
-		if (isset($_POST['keyword'])) {
-			$keyword = addslashes($_POST['keyword']);
-			$list = explode(" ", $keyword);
-			$flag = 0;
-			$KEYWORD = "";
-			for ($i=0; $i < count($list); $i++) { 
-				$in_database = $db->query("SELECT word_word FROM word WHERE word_word = \"$list[$i]\"");
-				$in_database = $in_database->fetchAll();
-				foreach ($in_database as $key) {
-					if ($key['word_word']) {
-						$flag = 1;
-						$KEYWORD = $list[$i];
-					} else {
-						$flag =0;
-					}
-				}
-			}
 
-			if ($flag = 1) {
-			$result = $db->query(" SELECT p.url AS url,
-									p.contents AS content,
-									p.title AS title,
-									COUNT(*) AS occurrences
-									FROM page p, word w, occurrence o
-									WHERE p.id = o.page_id AND 
-									w.word_id = o.word_id AND 
-									w.word_word = \"$KEYWORD\"
-									GROUP BY p.id
-									ORDER BY occurrences DESC");
-			$result = $result->fetchAll();
-			// echo "<h2>Search results for '".$_POST['keyword']."':</h2>\n";
-			
-		} 
-		}
+	if (isset($_GET['month']) and isset($_GET['year'])) {
+		$_month = $_GET['month'];
+		$_year = $_GET['year'];
+		$_month = $_year."-".$_month;
+		$result = $db->query("SELECT url, title FROM page WHERE Time = '$_month'");
+		$result = $result->fetchAll();
 	}
-
 ?>
- <div class="content container">
+
+<div class="content container">
             <div class="page-wrapper">
                 <div class="page-content">
                     <div class="row page-row">
@@ -48,28 +17,19 @@
                             <article class="course-item">
                                 <div class="page-row">
                                 <?php 
-                                    if ($keyword =="") {
-                                        echo "<h2>Please Enter a keyword to search for...</h2>";
-                                    } else {
-                                	$i =1;
+                                    $i =1;
                                     if ($result) {
-                                        echo "<h2>You searched for '$keyword':</h2>";
+                                        
                                     	foreach ($result as $row) {
-										$string = strip_tags($row['content']);
 										echo "<h3>$i. <a href=$row[url]>$row[title]</a></h3>\n";
-										echo "(occurrences: $row[occurrences])<br><br>\n";
-										if (strlen($string) > 100) {
-											$stringCut = substr($string, 0, 100);
-											$string = substr($stringCut, 0, strrpos($stringCut, ' ')); 
-										}
-                                        echo "<p>$string........<a href=$row[url]>Read More</a></p>";
-										// echo "<a href=$row[url]>$row[url]</a>\n";
+										
+										echo "<a href=$row[url]>$row[url]</a>\n";
 										$i++;
 									} 
                                 } else {
-                                    echo "<h2>Nothing found for '$keyword'<h2/>";
+                                    echo "<h2>Nothing Found<h2/>";
                                 }
-                                }
+                                
 						           ?>    
             				
                                  </div><!--//page-row-->                   
@@ -169,5 +129,3 @@
     </div><!--//wrapper-->
 <?php require('footer.php');
 ?>
-		
-
