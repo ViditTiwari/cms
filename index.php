@@ -12,24 +12,24 @@
                     <div class="flexslider">
                         <ul class="slides">
                             <li>
-                                <img src="images/CVS.jpg" />
+                                <img src="images/principal.JPG" />
                                 <div class="slider-caption">
-                                    <h2><a href="blog-single.html">When a Doctor’s Visit Is a Guilt Trip</a></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                                    <h2><a href="blog-single.html">Dr. Inderjeet Dagar</a></h2>
+                                    <p>Principal of College of Vocational Studies</p>
                                 </div>
                             </li>
                             <li>
-                                <img src="images/CVS.jpg" />
+                                <img src="images/college.jpg" />
                                 <div class="slider-caption">
-                                    <h2><a href="blog-single.html">Unlocking the scrolls of Herculaneum</a></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                                    <h2><a href="blog-single.html">College Building</a></h2>
+                                    <p>Beautiful surrounding! </p>
                                 </div>
                             </li>
                             <li>
-                                <img src="images/CVS.jpg" />
+                                <img src="images/annual.jpg" />
                                 <div class="slider-caption">
-                                    <h2><a href="blog-single.html">Corin Sworn wins Max Mara Art Prize</a></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                                    <h2><a href="blog-single.html">Vocational Annual Day</a></h2>
+                                    <p>Annual Day celebrations!</p>
                                 </div>
                             </li>
                         </ul> <!-- /.slides -->
@@ -174,42 +174,42 @@
                         <div class="gallery-small-thumbs clearfix">
                             <div class="thumb-small-gallery">
                                 <a class="fancybox" rel="gallery1" href="images/gallery/gallery1.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/gallery-small-thumb1.jpg" alt="" />
+                                    <img src="images/gallery/trophy.jpg" alt="" />
                                 </a>
                             </div>
                             <div class="thumb-small-gallery">
                                 <a class="fancybox" rel="gallery1" href="images/gallery/gallery2.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/gallery-small-thumb2.jpg" alt="" />
+                                    <img src="images/gallery/trophy1.jpg" alt="" />
                                 </a>
                             </div>
                             <div class="thumb-small-gallery">
                                 <a class="fancybox" rel="gallery1" href="images/gallery/gallery3.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/gallery-small-thumb3.jpg" alt="" />
+                                    <img src="images/gallery/image1.jpg" alt="" />
                                 </a>
                             </div>
                             <div class="thumb-small-gallery">
                                 <a class="fancybox" rel="gallery1" href="images/gallery/gallery4.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/gallery-small-thumb4.jpg" alt="" />
+                                    <img src="images/gallery/image2.jpg" alt="" />
                                 </a>
                             </div>
                             <div class="thumb-small-gallery">
                                 <a class="fancybox" rel="gallery1" href="images/gallery/gallery5.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/gallery-small-thumb5.jpg" alt="" />
+                                    <img src="images/gallery/image3.jpg" alt="" />
                                 </a>
                             </div>
                             <div class="thumb-small-gallery">
                                 <a class="fancybox" rel="gallery1" href="images/gallery/gallery6.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/gallery-small-thumb6.jpg" alt="" />
+                                    <img src="images/gallery/image6.jpg" alt="" />
                                 </a>
                             </div>
                             <div class="thumb-small-gallery">
                                 <a class="fancybox" rel="gallery1" href="images/gallery/gallery7.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/gallery-small-thumb7.jpg" alt="" />
+                                    <img src="images/gallery/image4.jpg" alt="" />
                                 </a>
                             </div>
                             <div class="thumb-small-gallery">
                                 <a class="fancybox" rel="gallery1" href="images/gallery/gallery8.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/gallery-small-thumb8.jpg" alt="" />
+                                    <img src="images/gallery/image5.jpg" alt="" />
                                 </a>
                             </div>
                         </div> <!-- /.galler-small-thumbs -->

@@ -58,7 +58,7 @@ if(isset($_POST['delete_sub_menu']))
                                             <td><?php echo $row['m_menu_name']; ?></td>
                                             <form action='' method="post">
                                                 <input type="hidden" name="menu_name" value="<?php echo $row['m_menu_name']; ?>">
-                                                <td></td>
+                                                <td><?php echo $row['m_menu_link']; ?></td>
                                                 <td><button i class="fa fa-times" type="submit" name="delete_main_menu"></i></td>
                                             </form>
                                             <tr>

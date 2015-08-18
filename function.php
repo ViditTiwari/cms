@@ -66,11 +66,24 @@
 // Latest News
     function show_latest_news(){
         $result = select_table('news');
-        foreach ($result as $row) {
+
         
+        foreach ($result as $row) {
+
+
+
+        echo '<div class="blog-list-post clearfix">';
+                                    
+        echo '<div class="blog-list-details">';
+                
         echo "<h5 class='blog-list-title'><a href=$row[url]>$row[title]</a></h5>";
         echo "<p class='blog-list-meta small-text'>$row[description]</p>";
+
+
+        echo '</div>';
+        echo '</div>';
     }  
+
     }
 
 // Events
@@ -104,8 +117,17 @@
 
        $result = select_table('imp_links');
        foreach ($result as $row) {
+            
+            echo '<div class="blog-list-post clearfix">';
+                                    
+            echo '<div class="blog-list-details">';
+                                        
+                                    
             echo "<h5 class='blog-list-title'><a href=$row[url]>$row[title]</a></h5>";
-       } 
+
+            echo '</div>';
+            echo '</div>';
+            } 
     }
     
     function show_footer_link($footer)
