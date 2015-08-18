@@ -263,7 +263,7 @@ function check_file_name($name, $location, $path, $size, $ext) {
 		$todays_date = date("mdYHis");
 	    // $name = str_replace(',', '' , $name);
 	    $new_filename = $todays_date.'_'.$name;
-	    rename($name, $new_filename);
+	    // rename($name, $new_filename);
 		return upload($new_filename, $location, $path, $size, $ext);
 	}
 	

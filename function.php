@@ -107,6 +107,18 @@
             echo "<h5 class='blog-list-title'><a href=$row[url]>$row[title]</a></h5>";
        } 
     }
+    
+    function show_footer_link($footer)
+    {
+        global $db;
+        $query = $db->query("SELECT title, url FROM footer_pages WHERE num= $footer" );
+        $query = $query->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($query as $row) {
+
+                echo '<li><a href="'.$row['url'].'"><i class="fa fa-caret-right"></i>'.$row['title'].'</a></li>';
+            }
+
+    }
 
     function get_month($key){
     	switch ($key) {

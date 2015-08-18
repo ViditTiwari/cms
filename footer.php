@@ -29,12 +29,9 @@
                     <div class="footer-col-inner">
                         <h3 class="footer-color">Footer Block 1</h3>
                         <ul>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>A to Z Index</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Admissions</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Bookstore</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Catalog / Classes</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Dining</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Financial Aid</a></li>
+                            <?php
+                            show_footer_link(1);
+                            ?>
                         </ul>
                     </div><!--//footer-col-inner-->
                 </div><!--//foooter-col-->
@@ -43,12 +40,9 @@
                     <div class="footer-col-inner">
                         <h3 class="footer-color">Footer Block 2</h3>
                         <ul>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Future Students</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Current Students</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Faculty/Staff</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>International</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Postdocs</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Alumni</a></li>
+                           <?php
+                            show_footer_link(2);
+                            ?>
                         </ul>
                     </div><!--//footer-col-inner-->
                 </div><!--//foooter-col-->
@@ -57,12 +51,9 @@
                     <div class="footer-col-inner">
                         <h3 class="footer-color">Footer Block 3</h3>
                         <ul>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Courses</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Apply Now</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Scholarships</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>FAQs</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>International student enquiries</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Graduation</a></li>
+                            <?php
+                            show_footer_link(3);
+                            ?>
                         </ul>
                     </div><!--//footer-col-inner-->
                 </div><!--//foooter-col-->
