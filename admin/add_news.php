@@ -3,8 +3,13 @@
 <?php
 	
 	require('header.php');
-	
-    $msg='';
+	$link ="";
+  $name = "";
+  $location = "";
+  $size = 0;
+  $path ="";
+  $ext ="";
+  $msg='';
 
 	if (isset($_POST['action'])) {
 		
@@ -15,6 +20,42 @@
 		 
 
 		}	
+
+   $errors = array();  
+  if (isset($_FILES['file'])) {
+
+      $name = $_FILES['file']['name'];
+      $size = $_FILES['file']['size'];
+      $location = $_FILES['file']['tmp_name'];
+      $path = $_SERVER['DOCUMENT_ROOT']."/cms/upload";
+            $extensions = array("pdf", "doc", "xls", "doc", "docx", "odt", "rtf",
+                 "tex", "txt", "wpd", "wps", "csv", "ppt", "pptx", 
+                 "tar", "zip", "xlr", "xlsx", ".7z", "gz", "pkg",
+                 "rar", "zipx" );      
+      $ext = explode('.', $name);
+      $ext = strtolower(end($ext));
+      
+      if (in_array($ext, $extensions)==false) {
+        $errors[] = "extensions not allowed";
+      }
+
+      if ($size > 5242880) {
+
+        $errors[] = "File size must be less than 5 MB";
+      }
+
+      if (empty($errors)==true) {
+        
+        $link = check_file_name($name, $location, $path, $size, $ext);
+      
+      } else {
+         print_r($errors);
+      }
+
+    }
+
+      
+
 ?>
 
 
@@ -27,9 +68,9 @@
                     <h1 class="page-header">Add Latest News</h1>
 			          
                  <div class="row">             
-
+                  <div class="col-lg-6">
                  <form  role="form" method="post" action="">
-                      <div class="col-lg-8">
+                      
                         <h4><?php echo $msg;?></h4>
                   <h4>Choose Page to add</h4>
                     <input type="hidden" name="action" value="find">  
@@ -51,8 +92,29 @@
                     </div>
             </form>
                     		
-			            		
-			            </div>
+			     </div>
+
+           <div style="margin-top:5px;" class="col-lg-6">
+            <form  role="form" method="post" action="" enctype="multipart/form-data">
+                        <h4><?php echo $msg;?></h4>
+                  <h4>Add file</h4>
+                    <div class="form-group">
+                     <input class="form-control" type="text" name="description" placeholder="Title">
+                  
+                    </div>
+                    <div class="form-group">
+                    <input type="file" name="file"/> 
+                              
+                  <br>                                  
+                <div>
+                  <button  type="submit" class="btn btn-success" name="submit" >Upload</button> 
+                </div>
+                <br>
+                  <?php echo "Max. size 5 MB"?> 
+                 <br>                                                      
+          </form>   
+             
+           </div>
 					
 
 						
