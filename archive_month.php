@@ -37,9 +37,9 @@
                         </div><!--//course-wrapper-->
                         <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">     
                                         <!-- Here begin Sidebar -->
-            
+                           
 
-                <div class="widget-main">
+                     <div class="widget-main sidebar">
                             <div class="widget-main-title">
                                 <h4 class="widget-title">Latest News</h4>
                             </div> <!-- /.widget-main-title -->
@@ -47,75 +47,21 @@
                                 <div class="blog-list-post clearfix">
                                     
                                     <div class="blog-list-details">
-                                        <h5 class="blog-list-title"><a href="blog-single.html">Graduate Open Day at the Ruskin</a></h5>
-                                        <p class="blog-list-meta small-text"><span><a href="#">12 January 2014</a></span> with <span><a href="#">3 comments</a></span></p>
-                                    </div>
-                                </div> <!-- /.blog-list-post -->
-                                <div class="blog-list-post clearfix">
-                                   
-                                    <div class="blog-list-details">
-                                        <h5 class="blog-list-title"><a href="blog-single.html">Visiting Artists: Giles Bailey</a></h5>
-                                        <p class="blog-list-meta small-text"><span><a href="#">12 January 2014</a></span> with <span><a href="#">3 comments</a></span></p>
-                                    </div>
-                                </div> <!-- /.blog-list-post -->
-                                 <div class="blog-list-post clearfix">
-                                   
-                                    <div class="blog-list-details">
-                                        <h5 class="blog-list-title"><a href="blog-single.html">Visiting Artists: Giles Bailey</a></h5>
-                                        <p class="blog-list-meta small-text"><span><a href="#">12 January 2014</a></span> with <span><a href="#">3 comments</a></span></p>
-                                    </div>
-                                </div> <!-- /.blog-list-post -->
-                                 
-                                <div class="blog-list-post clearfix">
-                                    
-                                    <div class="blog-list-details">
-                                        <h5 class="blog-list-title"><a href="blog-single.html">Workshop: Theories of the Image</a></h5>
-                                        <p class="blog-list-meta small-text"><span><a href="#">12 January 2014</a></span> with <span><a href="#">3 comments</a></span></p>
+                                    <?php show_latest_news();?>
                                     </div>
                                 </div> <!-- /.blog-list-post -->
                             </div> <!-- /.widget-inner -->
                         </div> <!-- /.widget-main -->
 
                          <div class="widget-main">
-                            <div class="widget-main-title">
+                              <div class="widget-main-title">
                                 <h4 class="widget-title">Important Links</h4>
                             </div> <!-- /.widget-main-title -->
                             <div class="widget-inner">
                                 <div class="blog-list-post clearfix">
                                     
                                     <div class="blog-list-details">
-                                        <h5 class="blog-list-title"><a href="blog-single.html">Graduate Open Day at the Ruskin</a></h5>
-                                        
-                                    </div>
-                                </div> <!-- /.blog-list-post -->
-                                <div class="blog-list-post clearfix">
-                                    
-                                    <div class="blog-list-details">
-                                        <h5 class="blog-list-title"><a href="blog-single.html">Graduate Open Day at the Ruskin</a></h5>
-                                        
-                                    </div>
-                                </div> <!-- /.blog-list-post -->
-                               
-
-                                <div class="blog-list-post clearfix">
-                                    
-                                    <div class="blog-list-details">
-                                        <h5 class="blog-list-title"><a href="blog-single.html">Visiting Artists: Giles Bailey</a></h5>
-                                       
-                                    </div>
-                                </div> <!-- /.blog-list-post -->
-                                <div class="blog-list-post clearfix">
-                                    
-                                    <div class="blog-list-details">
-                                        <h5 class="blog-list-title"><a href="blog-single.html">Visiting Artists: Giles Bailey</a></h5>
-                                       
-                                    </div>
-                                </div> <!-- /.blog-list-post -->
-                                <div class="blog-list-post clearfix">
-                                   
-                                    <div class="blog-list-details">
-                                        <h5 class="blog-list-title"><a href="blog-single.html">Workshop: Theories of the Image</a></h5>
-                                        
+                                    <?php show_important_link();?>
                                     </div>
                                 </div> <!-- /.blog-list-post -->
                             </div> <!-- /.widget-inner -->

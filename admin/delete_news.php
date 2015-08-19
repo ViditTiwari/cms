@@ -9,8 +9,6 @@ if(isset($_POST['delete_news_page']))
     delete_news($_POST['url']);
 }
 
-
-
 ?>
         <div id="page-wrapper">
             <div class="row">

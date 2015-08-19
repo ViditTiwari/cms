@@ -1,28 +1,41 @@
 <?php require('header.php');
 ?>
-<!-- ******CONTENT****** --> 
-        <div class="content container">
+
+<div class="content container">
             <div class="page-wrapper">
-                
                 <div class="page-content">
                     <div class="row page-row">
-                        <div class="course-wrapper col-md-8 col-sm-8">    
-                        <header class="page-heading clearfix">
-                    <h1 class="heading-title pull-left">Archives</h1>
-                    
-                </header>                      
+                        <div class="course-wrapper col-md-8 col-sm-7">                         
                             <article class="course-item">
-                              
                                 <div class="page-row">
-                                  	<?php show_archive();?>
-                                 </div>                   
+                                <?php 
+                                $result = select_table('events');
+                                    $i =1;
+                                    if ($result) {
+                                        
+                                    	foreach ($result as $row) {
+                                        $string = strip_tags($row['description']);
+										echo "<h2>$i. <a href=$row[url]>$row[title]</a></h2>\n";
+                                        echo "<h6>Date : $row[event_date]</h6>\n";
+										echo "<p>$string</p>\n";
+										echo "<a href=$row[url]>$row[url]</a>\n";
+                                        
+										$i++;
+									} 
+                                } else {
+                                    echo "<h2>Nothing Found<h2/>";
+                                }
+                                
+						           ?>    
+            				
+                                 </div><!--//page-row-->                   
                             </article><!--//course-item-->                                              
                         </div><!--//course-wrapper-->
-                        
-                        <div class="col-md-4 col-sm-4 ">     
-                                        <!-- Here begin Sidebar -->             
+                        <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">     
+                                        <!-- Here begin Sidebar -->
+            
 
-                     <div class="widget-main sidebar">
+                    <div class="widget-main sidebar">
                             <div class="widget-main-title">
                                 <h4 class="widget-title">Latest News</h4>
                             </div> <!-- /.widget-main-title -->
