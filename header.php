@@ -62,9 +62,11 @@ require_once('includes/config_new.php');
                 <div class='col-md-8 col-sm-8'>
                     <h1 class='college'>College of Vocational Studies</h1> 
                         <h1 class='university'>University of Delhi</h1>
+                </div>
                     
                     
-                <div class='col-md-2 col-sm-2'>
+                <div class='logo col-md-2 col-sm-2'>
+                 <img src="/cms/images/dulogo.png" height="90">
                 </div>
                    
                 </div><!--//info-->

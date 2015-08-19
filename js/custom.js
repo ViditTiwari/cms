@@ -60,11 +60,16 @@ jQuery(document).ready(function($){
 
 	$(window).load(function() {
 	    $('.flexslider').flexslider({
-	    	animation: "fade",
+	    	animation: "slide",
 	    	touch: true,
 	    	controlNav: false,
 	    	prevText: "&nbsp;",  
-			nextText: "&nbsp;" 
+			nextText: "&nbsp;",
+			slideshowSpeed: 3000,
+			animationSpeed: 600,
+			slideshow: true,
+			easing: "swing",
+			animationLoop: true
 	    });
 	});
 
