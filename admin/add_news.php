@@ -1,25 +1,25 @@
 <!-- Footer Block 1 -->
 
 <?php
-	
-	require('header.php');
-	$link ="";
+  
+  require('header.php');
+  $link ="";
   $name = "";
   $location = "";
   $size = 0;
   $path ="";
   $ext ="";
-  $msg='';
+  $msg1 = $msg2='';
 
-	if (isset($_POST['action'])) {
-		
-		$pagename = $_POST['pagename'];
+  if (isset($_POST['action'])) {
+    
+    $pagename = $_POST['pagename'];
     $description = $_POST['description'];
 
-		$msg= check_news_page($pagename, $description);
-		 
+    $msg1= check_news_page($pagename, $description);
+     
 
-		}	
+    } 
 
    $errors = array();  
   if (isset($_FILES['file'])) {
@@ -47,7 +47,7 @@
       if (empty($errors)==true) {
         
         $link = check_file_name($name, $location, $path, $size, $ext);
-      
+        $msg2= add_news_file($_POST['Title'], $_POST['Description'], $link);
       } else {
          print_r($errors);
       }
@@ -66,12 +66,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Add Latest News</h1>
-			          
+                
                  <div class="row">             
                   <div class="col-lg-6">
                  <form  role="form" method="post" action="">
                       
-                        <h4><?php echo $msg;?></h4>
+                        <h4><?php echo $msg1;?></h4>
                   <h4>Choose Page to add</h4>
                     <input type="hidden" name="action" value="find">  
                     
@@ -91,23 +91,30 @@
                       <input type="submit" class="btn btn-success" name="submit" value="Add Page">
                     </div>
             </form>
-                    		
-			     </div>
+                        
+           </div>
 
            <div style="margin-top:5px;" class="col-lg-6">
             <form  role="form" method="post" action="" enctype="multipart/form-data">
-                        <h4><?php echo $msg;?></h4>
+                        <h4><?php echo $msg2;?></h4>
                   <h4>Add file</h4>
                     <div class="form-group">
-                     <input class="form-control" type="text" name="description" placeholder="Title">
+                     <input class="form-control" type="text" name="Description" placeholder="Type the Latest News Description">
                   
                     </div>
                     <div class="form-group">
-                    <input type="file" name="file"/> 
-                              
-                  <br>                                  
+                     <input class="form-control" type="text" name="Title" placeholder="Title">
+                  
+                    </div>
+                    <div class="form-group">
+                    <input type="file" name="file" id="control"/> 
+                     </div>
+                     <div class="form-group">
+                       <button id="clear">Clear</button>
+                     </div>         
+                                                  
                 <div>
-                  <button  type="submit" class="btn btn-success" name="submit" >Upload</button> 
+                  <button  type="submit" class="btn btn-success" name="submit">Upload</button>
                 </div>
                 <br>
                   <?php echo "Max. size 5 MB"?> 
@@ -115,11 +122,11 @@
           </form>   
              
            </div>
-					
+          
 
-						
-						
-						
+            
+            
+            
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -169,12 +176,12 @@ var substringMatcher = function(strs) {
 };
 
 <?php $result = get_page_and_id(); ?>
-																					
-											
+                                          
+                      
 var states = [<?php foreach ($result as $res){ 
-				echo " '$res[title]',";
-			}
-		    ?>
+        echo " '$res[title]',";
+      }
+        ?>
 ];
 
 $('#the-basics .typeahead').typeahead({
@@ -187,6 +194,11 @@ $('#the-basics .typeahead').typeahead({
   source: substringMatcher(states)
 });
 
+var control = $("#control");
+
+$("#clear").on("click", function () {
+    control.replaceWith( control = control.clone( true ) );
+});
 </script>
 
 

@@ -9,8 +9,6 @@ if(isset($_POST['delete_imp_links_page']))
     delete_imp_links_page($_POST['url']);
 }
 
-
-
 ?>
         <div id="page-wrapper">
             <div class="row">

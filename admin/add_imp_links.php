@@ -1,18 +1,58 @@
 <!-- Footer Block 1 -->
 
 <?php
-	
-	require('header.php');
-	
-    $msg='';
+  
+  require('header.php');
+  $link ="";
+  $name = "";
+  $location = "";
+  $size = 0;
+  $path ="";
+  $ext ="";
+  $msg1 = $msg2='';
 
-	if (isset($_POST['action'])) {
-		
-		$pagename = $_POST['pagename'];
-		$msg= check_imp_links_page($pagename);
-		 
+  if (isset($_POST['action'])) {
+    
+    $pagename = $_POST['pagename'];
+    $msg1= check_imp_links_page($pagename);
+     
 
-		}	
+    } 
+
+    $errors = array();  
+  if (isset($_FILES['file'])) {
+
+      $name = $_FILES['file']['name'];
+      $size = $_FILES['file']['size'];
+      $location = $_FILES['file']['tmp_name'];
+      $path = $_SERVER['DOCUMENT_ROOT']."/cms/upload";
+            $extensions = array("pdf", "doc", "xls", "doc", "docx", "odt", "rtf",
+                 "tex", "txt", "wpd", "wps", "csv", "ppt", "pptx", 
+                 "tar", "zip", "xlr", "xlsx", ".7z", "gz", "pkg",
+                 "rar", "zipx" );      
+      $ext = explode('.', $name);
+      $ext = strtolower(end($ext));
+      
+      if (in_array($ext, $extensions)==false) {
+        $errors[] = "extensions not allowed";
+      }
+
+      if ($size > 5242880) {
+
+        $errors[] = "File size must be less than 5 MB";
+      }
+
+      if (empty($errors)==true) {
+        
+        $link = check_file_name($name, $location, $path, $size, $ext);
+        $msg2= add_imp_links_file($_POST['Title'], $link);
+      } else {
+         print_r($errors);
+      }
+
+    }
+
+    
 ?>
 
 
@@ -25,29 +65,55 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Important Links</h1>
-			           <div class="row">
-                    		<form  role="form" method="post" action="">
-			            		<div class="col-lg-8">
-			            			<h4><?php echo $msg;?></h4>
-									<h4>Choose Page to add</h4>
-										<input type="hidden" name="action" value="find">	
-										
-										<div class="form-group">
-											<div id="the-basics">
+                 <div class="row">
+                 <div class="col-lg-6">
+                        <form  role="form" method="post" action="">
+                      
+                        <h4><?php echo $msg1;?></h4>
+                  <h4>Choose Page to add</h4>
+                    <input type="hidden" name="action" value="find">  
+                    
+                    <div class="form-group">
+                      <div id="the-basics">
 
-											<input class="typeahead" type="text" name="pagename" placeholder="Type the page name">
-									
-										</div>
-											
-										</div>
-										<div class="form-group">
-											<input type="submit" class="btn btn-success" name="submit" value="Add Page">
-										</div>
-						</form>
+                      <input class="typeahead" type="text" name="pagename" placeholder="Type the page name">
+                  
+                    </div>
+                      
+                    </div>
+                    <div class="form-group">
+                      <input type="submit" class="btn btn-success" name="submit" value="Add Page">
+                  </div>
+            </form>
 
-						
-						
-						
+               </div>
+           <div class="col-lg-6">
+            <form  role="form" method="post" action="" enctype="multipart/form-data">
+                        <h4><?php echo $msg2;?></h4>
+                  <h4>Add file</h4>
+                    <div class="form-group">
+                     <input class="form-control" type="text" name="Title" placeholder="Title">
+                  
+                    </div>
+                    <div class="form-group">
+                    <input type="file" name="file" id="control"/> 
+                     </div>
+                     <div class="form-group">
+                       <button id="clear">Clear</button>
+                     </div>         
+                                                  
+                <div>
+                  <button  type="submit" class="btn btn-success" name="submit" >Upload</button> 
+                </div>
+                <br>
+                  <?php echo "Max. size 5 MB"?> 
+                 <br>                                                      
+          </form>   
+             
+           </div>
+
+            
+            
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -96,12 +162,12 @@ var substringMatcher = function(strs) {
 };
 
 <?php $result = get_page_and_id(); ?>
-																					
-											
+                                          
+                      
 var states = [<?php foreach ($result as $res){ 
-				echo " '$res[title]',";
-			}
-		    ?>
+        echo " '$res[title]',";
+      }
+        ?>
 ];
 
 $('#the-basics .typeahead').typeahead({
@@ -114,6 +180,11 @@ $('#the-basics .typeahead').typeahead({
   source: substringMatcher(states)
 });
 
+var control = $("#control");
+
+$("#clear").on("click", function () {
+    control.replaceWith( control = control.clone( true ) );
+});
 </script>
 
 </body>

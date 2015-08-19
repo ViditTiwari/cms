@@ -348,11 +348,28 @@ function add_imp_links($pagename){
 	return "Page Added to the Important links";
 }
 
+function add_imp_links_file($title, $link){
+	global $db;
+	$query = $db->query("INSERT INTO imp_links(title,url) VALUES ('$title','$link')");
+	if ($query) {
+	return "File Added to the Important links";
+	} else {
+		return "Error in adding file to imp. links";
+	}
+}
+
 function delete_imp_links_page($url){
 
 	global $db;
 	$sql = $db->query (sprintf ( "DELETE FROM imp_links WHERE url='%s'", mysql_real_escape_string ( $url)));
-
+	$downloads = $db->query("SELECT name,url FROM downloads WHERE url = '$url'");
+	$downloads = $downloads->fetchAll();
+	if ($downloads) {
+		$path = $_SERVER['DOCUMENT_ROOT']."/cms/upload";
+		foreach ($downloads as $row) {
+			delete_file($row['name'], $path);
+		}
+	}
 // Check for errors
 if (!$sql) {
   
@@ -428,10 +445,28 @@ function add_news($pagename, $description){
 	return "Page Added to the Latest News";
 }
 
+function add_news_file($title, $description, $link){
+	global $db;
+	$query = $db->query("INSERT INTO news(description,title,url) VALUES ('$description', '$title','$link')");
+	if ($query) {
+		return "Link Added to the Latest News";
+	} else {
+	  return "Error in adding news!";
+	}
+}
+
 function delete_news($url){
 
 	global $db;
 	$sql = $db->query (sprintf ( "DELETE FROM news WHERE url='%s'", mysql_real_escape_string ( $url)));
+	$downloads = $db->query("SELECT name,url FROM downloads WHERE url = '$url'");
+	$downloads = $downloads->fetchAll();
+	if ($downloads) {
+		$path = $_SERVER['DOCUMENT_ROOT']."/cms/upload";
+		foreach ($downloads as $row) {
+			delete_file($row['name'], $path);
+		}
+	}
 
 // Check for errors
 if (!$sql) {
