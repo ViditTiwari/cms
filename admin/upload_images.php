@@ -6,20 +6,19 @@
 	$location = "";
 	$size = 0;
 	$path ="";
-	$ext ="";
-	$table="downloads";
+	$ext =""; 
+	$table="images";
 	$errors = array();	
-	
 	if (isset($_FILES['file'])) {
 
 			$name = $_FILES['file']['name'];
 			$size = $_FILES['file']['size'];
 			$location = $_FILES['file']['tmp_name'];
-			$path = $_SERVER['DOCUMENT_ROOT']."/cms/upload";
-			 			$extensions = array("pdf", "doc", "xls", "doc", "docx", "odt", "rtf",
-								 "tex", "txt", "wpd", "wps", "csv", "ppt", "pptx", 
-								 "tar", "zip", "xlr", "xlsx", ".7z", "gz", "pkg",
-								 "rar", "zipx" );      
+			$path = $_SERVER['DOCUMENT_ROOT']."/cms/gallery";
+			 			$extensions = array("jpeg", "jpg", "png", "gif", "bmp", "ani", "cal",
+								 "fax", "img", "jpe", "jbg", "mac", "pbm", "pcd", 
+								 "pcx", "pct", "pgm", "ppm", "psd", "ras", "tga",
+								 "tiff", "wmf" );      
 			$ext = explode('.', $name);
 			$ext = strtolower(end($ext));
 			
@@ -50,7 +49,7 @@
 <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Upload Files</h1>
+                    <h1 class="page-header">Upload Images</h1>
                     <div class="row">
                     <form  role="form" method="post" action="" enctype="multipart/form-data">
 			            <div class="col-lg-12">

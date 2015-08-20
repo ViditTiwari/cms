@@ -3,8 +3,8 @@ require('header.php');
 //define page title
 $title = 'Admin';
 $msg ="";
-$path = $_SERVER['DOCUMENT_ROOT']."/cms/upload";
-$table="downloads";
+$path = $_SERVER['DOCUMENT_ROOT']."/cms/gallery";
+$table="images";
 
 if(isset($_POST['delete_file']))
 {
@@ -18,7 +18,7 @@ if(isset($_POST['delete_file']))
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Uploaded Files</h1>
+                    <h1 class="page-header">Uploaded Images</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -28,7 +28,7 @@ if(isset($_POST['delete_file']))
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Delete File
+                            Delete Images
                         </div>
                         <!-- /.panel-heading -->
 
@@ -39,14 +39,14 @@ if(isset($_POST['delete_file']))
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>File Name</th>
+                                            <th>Image Name</th>
                                             <th>Link</th>
                                             <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $res=$db->query("SELECT * FROM downloads");
+                                        $res=$db->query("SELECT * FROM images");
                                         $i=1;
                                         while($row=$res->fetch())
                                         {   

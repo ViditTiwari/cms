@@ -76,7 +76,7 @@
                                     
         echo '<div class="blog-list-details">';
                 
-        echo "<h5 class='blog-list-title'><a href=$row[url]>$row[title]</a></h5>";
+        echo '<h5 class="blog-list-title"><a href="'.$row['url'].'" >'.$row['title'].'</a></h5>';
         echo "<p class='blog-list-meta small-text'>$row[description]</p>";
 
 

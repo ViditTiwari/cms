@@ -39,6 +39,8 @@ require_once('includes/config_new.php');
     <![endif]-->
 </head> 
 
+
+
 <body class='home-page'>
     <div class='wrapper'>
         <!-- ******HEADER****** --> 
@@ -54,6 +56,8 @@ require_once('includes/config_new.php');
                     </form>         
                 </div>      
             </div><!--//to-bar-->
+            
+            <div class="bg">
             <div class='header-main container'>
                 <div class='logo col-md-2 col-sm-2'>
                     <img src="/cms/images/logo.jpg">
@@ -69,8 +73,9 @@ require_once('includes/config_new.php');
                  <img src="/cms/images/dulogo.png" height="90">
                 </div>
                    
-                </div><!--//info-->
+                
             </div><!--//header-main-->
+        </div>
         </header><!--//header-->
         
         <!-- ******NAV****** -->

@@ -227,12 +227,12 @@ function get_page_and_id(){
 }
 
 // delete any uploaded file
-function delete_file($name, $path){
+function delete_file($name, $path, $table){
 	global $db;
 	$path = $path."/".$name;
 	if (file_exists($path)) {
 		if (unlink($path)) {
-			$query = $db->query("DELETE FROM downloads WHERE name = '$name' LIMIT 1");
+			$query = $db->query("DELETE FROM {$table} WHERE name = '$name' LIMIT 1");
 			return "Success";
 		} else {
 			return "fail";
@@ -243,28 +243,28 @@ function delete_file($name, $path){
 }
 
 // Upload file with allowed extensions
-function upload($name, $location, $path, $size, $ext) {
+function upload($name, $location, $path, $size, $ext, $table) {
 	global $db;
 	$url = $path."/$name";
 	move_uploaded_file($location, $url);
-	$sql = $db->query("INSERT INTO downloads(name, size, type, url) VALUES('$name', '$size', '$ext', '$url')");
+	$sql = $db->query("INSERT INTO {$table}(name, size, type, url) VALUES('$name', '$size', '$ext', '$url')");
 	return $url;
 }
 
 // File name unique or not
-function check_file_name($name, $location, $path, $size, $ext) {
+function check_file_name($name, $location, $path, $size, $ext, $table) {
 	// Check if the file name exist already
 	global $db, $flag;
-	$query = $db->query("SELECT name FROM downloads WHERE name = '$name'");
+	$query = $db->query("SELECT name FROM {$table} WHERE name = '$name'");
 	$query = $query->fetchAll();
 	if (empty($query)) {
-		return upload($name, $location, $path, $size, $ext);
+		return upload($name, $location, $path, $size, $ext, $table);
 	} else {
 		$todays_date = date("mdYHis");
 	    // $name = str_replace(',', '' , $name);
 	    $new_filename = $todays_date.'_'.$name;
 	    // rename($name, $new_filename);
-		return upload($new_filename, $location, $path, $size, $ext);
+		return upload($new_filename, $location, $path, $size, $ext, $table);
 	}
 	
 }
@@ -361,13 +361,14 @@ function add_imp_links_file($title, $link){
 function delete_imp_links_page($url){
 
 	global $db;
+	$table="downloads";
 	$sql = $db->query (sprintf ( "DELETE FROM imp_links WHERE url='%s'", mysql_real_escape_string ( $url)));
 	$downloads = $db->query("SELECT name,url FROM downloads WHERE url = '$url'");
 	$downloads = $downloads->fetchAll();
 	if ($downloads) {
 		$path = $_SERVER['DOCUMENT_ROOT']."/cms/upload";
 		foreach ($downloads as $row) {
-			delete_file($row['name'], $path);
+			delete_file($row['name'], $path, $table);
 		}
 	}
 // Check for errors
@@ -458,13 +459,14 @@ function add_news_file($title, $description, $link){
 function delete_news($url){
 
 	global $db;
+	$table="downloads";
 	$sql = $db->query (sprintf ( "DELETE FROM news WHERE url='%s'", mysql_real_escape_string ( $url)));
 	$downloads = $db->query("SELECT name,url FROM downloads WHERE url = '$url'");
 	$downloads = $downloads->fetchAll();
 	if ($downloads) {
 		$path = $_SERVER['DOCUMENT_ROOT']."/cms/upload";
 		foreach ($downloads as $row) {
-			delete_file($row['name'], $path);
+			delete_file($row['name'], $path, $table);
 		}
 	}
 
@@ -700,7 +702,17 @@ function strip_punctuation( $text ){
                 ),
                 ' ',
                 $text );
-        }    
+        } 
+
+
+  function count_no($table)
+
+  { global $db;
+
+  	$query= $db->query("SELECT COUNT(*) FROM {$table}");
+  	$rows = $query->fetch(PDO::FETCH_NUM);
+    return $rows[0];
+  }   
         
 
 ?>

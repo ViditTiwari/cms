@@ -103,7 +103,7 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="admin.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Menu<span class="fa arrow"></span></a>
@@ -122,7 +122,7 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                         </li>
                         
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Create a New Page<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Create a New Page<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="add.php">Add new Page</a>
@@ -142,7 +142,7 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                         </li>
 
                          <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Latest News<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-newspaper-o fa-fw"></i> Latest News<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="add_news.php">Add Latest News</a>
@@ -157,7 +157,7 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
 
 
                             <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Important Links<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-link fa-fw"></i> Important Links<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="add_imp_links.php">Add Important Links</a>
@@ -171,7 +171,7 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Events<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-calendar fa-fw"></i> Events<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="add_events.php">Add Events</a>
@@ -184,7 +184,7 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                             </ul>
                         </li>
                          <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Footer<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-tasks fa-fw"></i> Footer<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="add_footer.php">Add Footer</a>
@@ -196,12 +196,23 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                                 
                             </ul>
                             <!-- /.nav-second-level -->
+                        </li>
 
                         <li>
-                            <a href="gallery.php"><i class="fa fa-edit fa-fw"></i> Gallery</a>
+                            <a href="#"><i class="fa fa-picture-o fa-fw"></i> Gallery<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="upload_images.php">Image Upload</a>
+                                </li>
+                                <li>
+                                    <a href="delete_images.php">Delete Images</a>
+                                </li>
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Upload<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-upload fa-fw"></i> Upload<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="upload_file.php">File Upload</a>

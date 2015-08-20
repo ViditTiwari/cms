@@ -1,7 +1,11 @@
 /**** Background Colors ****/
 body,
 .lightBtn {
-   background-image: url("../textures/bright_squares.png");
+   background-image: url("../textures/bg.gif");
+}
+
+.bg{
+    background: url("../images/bg1.jpg");
 }
 
 .main-slideshow,
