@@ -248,6 +248,17 @@ function upload($name, $location, $path, $size, $ext, $table) {
 	$url = $path."/$name";
 	move_uploaded_file($location, $url);
 	$sql = $db->query("INSERT INTO {$table}(name, size, type, url) VALUES('$name', '$size', '$ext', '$url')");
+
+	if($table==="images")
+	{   $path1 = $_SERVER['DOCUMENT_ROOT']."/cms/gallery/thumb70";
+        $path2 = $_SERVER['DOCUMENT_ROOT']."/cms/gallery/thumb263";
+
+        $name1=$name;
+
+		check_thumb_name($name, $name1, $path, 70, 70, $table, "thumb_name_70", $path1);
+		check_thumb_name($name, $name1, $path, 263, 182, $table, "thumb_name_263", $path2);
+
+	}
 	return $url;
 }
 
@@ -265,6 +276,23 @@ function check_file_name($name, $location, $path, $size, $ext, $table) {
 	    $new_filename = $todays_date.'_'.$name;
 	    // rename($name, $new_filename);
 		return upload($new_filename, $location, $path, $size, $ext, $table);
+	}
+	
+}
+
+function check_thumb_name($name, $name1, $path, $width, $height, $table, $col_name, $dest) {
+	// Check if the file name exist already
+	global $db, $flag;
+	$query = $db->query("SELECT $col_name FROM {$table} WHERE $col_name = '$name'");
+	$query = $query->fetchAll();
+	if (empty($query)) {
+		makeThumbnails($name, $name1, $path, $width,$height,$col_name, $table, $dest);
+	} else {
+		$todays_date = date("mdYHis");
+	    // $name = str_replace(',', '' , $name);
+	    $new_filename = $todays_date.'_'.$name1;
+	    // rename($name, $new_filename);
+		makeThumbnails($name, $new_filename, $path, $width,$height,$col_name, $table, $dest);
 	}
 	
 }
@@ -712,7 +740,61 @@ function strip_punctuation( $text ){
   	$query= $db->query("SELECT COUNT(*) FROM {$table}");
   	$rows = $query->fetch(PDO::FETCH_NUM);
     return $rows[0];
-  }   
+  } 
+
+  function makeThumbnails($name, $name1, $path, $width,$height,$col_name,$table, $dest)
+{
+
+$thumbnail_width = $width;
+    $thumbnail_height = $height;
+    $thumb_beforeword = "thumb";
+    $arr_image_details = getimagesize($path."/".$name1); // pass id to thumb name
+    $original_width = $arr_image_details[0];
+    $original_height = $arr_image_details[1];
+    if ($original_width > $original_height) {
+        $new_width = $thumbnail_width;
+        $new_height = intval($original_height * $new_width / $original_width);
+    } else {
+        $new_height = $thumbnail_height;
+        $new_width = intval($original_width * $new_height / $original_height);
+    }
+
+    $dest_x = intval(($thumbnail_width - $new_width) / 2);
+    $dest_y = intval(($thumbnail_height - $new_height) / 2);
+    if ($arr_image_details[2] == 1) {
+        $imgt = "ImageGIF";
+        $imgcreatefrom = "ImageCreateFromGIF";
+    }
+    if ($arr_image_details[2] == 2) {
+        $imgt = "ImageJPEG";
+        $imgcreatefrom = "ImageCreateFromJPEG";
+    }
+    if ($arr_image_details[2] == 3) {
+        $imgt = "ImagePNG";
+        $imgcreatefrom = "ImageCreateFromPNG";
+    }
+    if ($imgt) {
+        $old_image = $imgcreatefrom($path."/".$name);
+        $new_image = imagecreatetruecolor($thumbnail_width, $thumbnail_height);
+        imagecopyresized($new_image, $old_image, $dest_x, $dest_y, 0, 0, $new_width, $new_height, $original_width, $original_height);
+        $imgt($new_image, $dest."/".$name1);
+    }
+
+    if($col_name==="thumb_name_70")
+    {
+    	$url_col ="url_70";
+    }
+    else
+    {
+    	$url_col ="url_263";
+    }
+
+    $url = $dest."/$name1";
+
+    global $db;
+
+    $query = $db->query("UPDATE {$table} SET $col_name ='$name1', $url_col='$url' WHERE name='$name'");
+}  
         
 
 ?>
