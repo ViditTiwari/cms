@@ -10,13 +10,16 @@
   $path ="";
   $ext ="";
   $msg1 = $msg2='';
+  $new=0;
+
 
   if (isset($_POST['action'])) {
     
     $pagename = $_POST['pagename'];
     $description = $_POST['description'];
-
-    $msg1= check_news_page($pagename, $description);
+    if(isset($_POST['new']))
+    $new = $_POST['new'];
+    $msg1= check_news_page($pagename, $description, $new);
      
 
     } 
@@ -84,6 +87,10 @@
 
                       <input class="typeahead" type="text" name="pagename" placeholder="Type the page name">
                   
+                    </div>
+
+                    <div class="checkbox">
+                    <label><input type="checkbox" name="new" value="1">New</label>
                     </div>
                       
                     </div>

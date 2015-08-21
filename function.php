@@ -66,23 +66,33 @@
 // Latest News
     function show_latest_news(){
         $result = select_table('news');
-
+        
+        echo '<div id="news_ticker">';
+        echo '<ul>';
         
         foreach ($result as $row) {
 
-
-
+        if($row['new']==1) 
+        $new = '<strong style="color: #a94442"><sup>&nbspNew!</sup></strong>';
+        else
+        $new='';
+        
         echo '<div class="blog-list-post clearfix">';
-                                    
+                               
         echo '<div class="blog-list-details">';
-                
-        echo '<h5 class="blog-list-title"><a href="'.$row['url'].'" >'.$row['title'].'</a></h5>';
+        echo '<li>';
+        echo '<h5 class="blog-list-title"><a href="'.$row['url'].'" >'.$row['title'].$new.'</a></h5>';
         echo "<p class='blog-list-meta small-text'>$row[description]</p>";
+        echo '</li>';
 
 
         echo '</div>';
         echo '</div>';
+       
     }  
+
+    echo '</ul>';
+    echo '</div>';
 
     }
 
@@ -138,6 +148,48 @@
         foreach ($query as $row) {
 
                 echo '<li><a href="'.$row['url'].'"><i class="fa fa-caret-right"></i>'.$row['title'].'</a></li>';
+            }
+
+    }
+
+    function show_gallery_images()
+    {
+        global $db;
+        $query = $db->query("SELECT name, thumb_name_263 FROM images" );
+        $query = $query->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($query as $row) {
+
+                echo '<div class="col-md-3 mix students" data-cat="2">';
+                echo '<div class="gallery-item">';
+                echo '<a class="fancybox" rel="gallery1" href="gallery/'.$row['name'].'">';
+                echo'<div class="gallery-thumb">';
+                echo'<img src="gallery/thumb263/'.$row['thumb_name_263'].'" alt="" />';
+                echo'</div>';
+                echo'</a>';
+                echo '</div>'; 
+                echo'</div>'; 
+
+            }
+
+    }
+
+     function show_gallery_images1()
+    {
+        global $db;
+        $query = $db->query("SELECT name, thumb_name_70 FROM images LIMIT 8" );
+        $query = $query->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($query as $row) {
+
+                echo '
+                            <div class="thumb-small-gallery">';
+
+                echo '<a class="fancybox" rel="gallery1" href="gallery/'.$row['name'].'" title="Gallery Tittle One">';
+                echo '<img src="gallery/thumb263/'.$row['thumb_name_70'].'" alt="" />';
+                echo '</a>
+                    </div>';
+
+                
+
             }
 
     }

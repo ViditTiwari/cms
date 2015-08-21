@@ -448,18 +448,18 @@ if (!$sql) {
 
 }
 
-function check_news_page($pagename, $description)
+function check_news_page($pagename, $description, $new)
 {
 	$col = 'title';
 	$table = 'news';
 	if (!check_url($table, $col, $pagename)) {	
 		return "This page already exists in Latest News";
 	} else {
-		return add_news($pagename, $description);
+		return add_news($pagename, $description, $new);
 	}
 }
 
-function add_news($pagename, $description){
+function add_news($pagename, $description, $new){
 	global $db;
 
 	$query = $db->query("SELECT title, url FROM page WHERE title= '$pagename'" );
@@ -468,7 +468,7 @@ function add_news($pagename, $description){
 			
 			$_title = $row['title'];
 			$_url = $row['url'];
-			$db->query("INSERT INTO news(description,title,url) VALUES ('$description', '$_title','$_url')");
+			$db->query("INSERT INTO news(description,title,url, new) VALUES ('$description', '$_title','$_url', '$new')");
 		}
 	
 	return "Page Added to the Latest News";

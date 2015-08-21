@@ -4,7 +4,7 @@
             <div class="page-wrapper">
                 <div class="page-content">
                     <div class="row page-row">
-                        <div class="course-wrapper col-md-8 col-sm-7">                         
+                        <div class="course-wrapper col-md-8 col-sm-8">                         
                             <article class="course-item">
                                 <div class="page-row">
                                 <?php 
@@ -28,7 +28,7 @@
                                  </div><!--//page-row-->                   
                             </article><!--//course-item-->                                              
                         </div><!--//course-wrapper-->
-                        <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">     
+                        <div class="col-md-4 col-sm-4">     
                                         <!-- Here begin Sidebar -->
             
 

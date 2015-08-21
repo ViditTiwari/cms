@@ -1,6 +1,7 @@
 <?php require('header.php');
 ?>
 
+
     <div class="container">
         <div class="row">
             
@@ -172,46 +173,8 @@
                     </div>
                     <div class="widget-inner">
                         <div class="gallery-small-thumbs clearfix">
-                            <div class="thumb-small-gallery">
-                                <a class="fancybox" rel="gallery1" href="images/gallery/gallery1.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/trophy.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="thumb-small-gallery">
-                                <a class="fancybox" rel="gallery1" href="images/gallery/gallery2.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/trophy1.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="thumb-small-gallery">
-                                <a class="fancybox" rel="gallery1" href="images/gallery/gallery3.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/image1.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="thumb-small-gallery">
-                                <a class="fancybox" rel="gallery1" href="images/gallery/gallery4.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/image2.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="thumb-small-gallery">
-                                <a class="fancybox" rel="gallery1" href="images/gallery/gallery5.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/image3.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="thumb-small-gallery">
-                                <a class="fancybox" rel="gallery1" href="images/gallery/gallery6.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/image6.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="thumb-small-gallery">
-                                <a class="fancybox" rel="gallery1" href="images/gallery/gallery7.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/image4.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="thumb-small-gallery">
-                                <a class="fancybox" rel="gallery1" href="images/gallery/gallery8.jpg" title="Gallery Tittle One">
-                                    <img src="images/gallery/image5.jpg" alt="" />
-                                </a>
-                            </div>
+                            <?php show_gallery_images1(); ?>
+                           
                         </div> <!-- /.galler-small-thumbs -->
                     </div> <!-- /.widget-inner -->
                 </div> <!-- /.widget-main -->
