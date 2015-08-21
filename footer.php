@@ -75,7 +75,8 @@
         </div><!--//bottom-bar-->
     </footer><!--//footer-->
      
-    <!-- Javascript -->          
+    <!-- Javascript --> 
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>         
     <script type="text/javascript" src="/cms/js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="/cms/js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="/cms/js/bootstrap.min.js"></script> 
@@ -89,7 +90,11 @@
     <script type="text/javascript" src="js/main.js"></script> -->
     <script type="text/javascript" src="/cms/js/plugins.js"></script>
     <script type="text/javascript" src="/cms/js/custom.js"></script>
-
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+     new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+    }
+    </script>
     <script type="text/javascript" charset="utf-8">
     $(document).ready(function(){
     $("a[rel^='prettyPhoto']").prettyPhoto();

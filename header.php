@@ -85,7 +85,7 @@ require_once('includes/config_new.php');
                         <?php echo "<li class='".Match("index")." nav-item'><a href='/cms/index.php'>Home</a>";?>
                         <?php nav_menu();?>
                     </ul><!--//nav-->
-                    <div class="col-sm-3 col-md-3 pull-right">
+                    <div class="col-sm-3 col-md-3 pull-left">
             <form class="navbar-form search-form" role='search' method='post' action='search.php'>
                 <div class="input-group">
                     <input type="text" class="form-control" name='keyword' placeholder='Search the site...'>
@@ -93,12 +93,13 @@ require_once('includes/config_new.php');
                        
                         <button type='submit' name='submit' class='btn btn-theme'>Go</button>
                     </div>
+
                 </div>
             </form>
-        </div>        
-
-                  </div><!--//navabr-collapse-->
-
+         
+        </div>      
+            <div style="padding-top:10px;" id="google_translate_element"></div>
+                </div><!--//navabr-collapse-->
             </div><!--//container-->
         </nav><!--//main-nav-->
            
