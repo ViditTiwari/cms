@@ -229,10 +229,20 @@ function get_page_and_id(){
 // delete any uploaded file
 function delete_file($name, $path, $table){
 	global $db;
+	$path1 =$path;
 	$path = $path."/".$name;
+
 	if (file_exists($path)) {
 		if (unlink($path)) {
 			$query = $db->query("DELETE FROM {$table} WHERE name = '$name' LIMIT 1");
+			if($table==="images")
+			{   
+				 
+				unlink($path1."/thumb70/".$name);
+				
+				unlink($path1."/thumb263/".$name);
+
+			}
 			return "Success";
 		} else {
 			return "fail";
