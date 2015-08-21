@@ -67,13 +67,14 @@
     function show_latest_news(){
         $result = select_table('news');
         
-        echo '<div id="news_ticker">';
+        echo '<marquee direction="up" scrolldelay="50" scrollamount="2" truespeed="1" height="400px" onmouseover="this.stop()" onmouseout="this.start()" behavior="scroll" style="height: 170px;">';
+        echo '<div id="news_ticker">';   
         echo '<ul>';
         
         foreach ($result as $row) {
 
         if($row['new']==1) 
-        $new = '<strong style="color: #a94442"><sup>&nbspNew!</sup></strong>';
+        $new = '<sup>&nbsp;<img src="images/new.gif"></sup>';
         else
         $new='';
         
@@ -93,6 +94,7 @@
 
     echo '</ul>';
     echo '</div>';
+    echo '</marquee>';
 
     }
 
