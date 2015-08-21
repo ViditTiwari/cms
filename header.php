@@ -45,17 +45,7 @@ require_once('includes/config_new.php');
     <div class='wrapper'>
         <!-- ******HEADER****** --> 
         <header class='header'>  
-            <div class='top-bar'>
-                <div class='container'>              
-                   
-                    <form class='pull-right search-form' role='search' method='post' action='search.php'>
-                        <div class='form-group'>
-                            <input type='text' class='form-control' name='keyword' placeholder='Search the site...'>
-                        </div>
-                        <button type='submit' name='submit' class='btn btn-theme'>Go</button>
-                    </form>         
-                </div>      
-            </div><!--//to-bar-->
+            
             
             <div class="bg">
             <div class='header-main container'>
@@ -95,6 +85,18 @@ require_once('includes/config_new.php');
                         <?php echo "<li class='".Match("index")." nav-item'><a href='/cms/index.php'>Home</a>";?>
                         <?php nav_menu();?>
                     </ul><!--//nav-->
+                    <div class="col-sm-3 col-md-3 pull-right">
+            <form class="navbar-form search-form" role='search' method='post' action='search.php'>
+                <div class="input-group">
+                    <input type="text" class="form-control" name='keyword' placeholder='Search the site...'>
+                    <div class="input-group-btn">
+                       
+                        <button type='submit' name='submit' class='btn btn-theme'>Go</button>
+                    </div>
+                </div>
+            </form>
+        </div>        
+
                   </div><!--//navabr-collapse-->
 
             </div><!--//container-->
