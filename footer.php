@@ -3,29 +3,7 @@
         <div class="footer-content">
             <div class="container">
                 <div class="row">
-                 <div class="footer-col col-md-3 col-sm-12 contact">
-                    <div class="footer-col-inner">
-                        <h3 class="footer-color">Contact us</h3>
-                        <div class="row">
-                            <p class="adr clearfix col-md-12 col-sm-4">
-                                <i class="fa fa-map-marker pull-left"></i>        
-                                <span class="adr-group pull-left"> 
-
-                                    <span class="street-address">College of Vocational Studies</span><br>
-                                    <span class="region">Triveni</span><br>
-                                    <span class="region">Sheikh Sarai-II</span><br>
-                                    <span class="region">New Delhi</span><br>
-                                    <span class="postal-code">110017</span><br>
-                                    
-                                </span>
-                            </p>
-                            <p class="tel col-md-12 col-sm-4"><i class="fa fa-phone"></i>011 29258544, 011 29258792</p>
-                            <p class="email col-md-12 col-sm-4"><i class="fa fa-envelope"></i><a href="#">du.cvs.principal@gmail.com</a></p>
-                            <p class="email col-md-12 col-sm-4"><i class="fa fa-envelope"></i><a href="#">cvs_1972@yahoo.com</a></p>  
-                        </div> 
-                    </div><!--//footer-col-inner-->            
-                </div><!--//foooter-col-->   
-                <div class="footer-col col-md-3 col-sm-4 about">
+                 <div class="footer-col col-md-3 col-sm-4 about">
                     <div class="footer-col-inner">
                         <h3 class="footer-color">Footer Block 1</h3>
                         <ul>
@@ -40,8 +18,23 @@
                     <div class="footer-col-inner">
                         <h3 class="footer-color">Footer Block 2</h3>
                         <ul>
-                           <?php
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Something</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Something</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Something</a></li>
+                            
+                            <?php
                             show_footer_link(2);
+                            ?>
+                        </ul>
+                    </div><!--//footer-col-inner-->
+                </div><!--//foooter-col-->
+
+                <div class="footer-col col-md-3 col-sm-4 about">
+                    <div class="footer-col-inner">
+                        <h3 class="footer-color">Footer Block 3</h3>
+                        <ul>
+                           <?php
+                            show_footer_link(3);
                             ?>
                         </ul>
                     </div><!--//footer-col-inner-->
@@ -49,14 +42,25 @@
                
                 <div class="footer-col col-md-3 col-sm-4 about">
                     <div class="footer-col-inner">
-                        <h3 class="footer-color">Footer Block 3</h3>
+                        <h3 class="footer-color">Footer Block 4</h3>
                         <ul>
                             <?php
-                            show_footer_link(3);
+                            show_footer_link(4);
                             ?>
                         </ul>
                     </div><!--//footer-col-inner-->
                 </div><!--//foooter-col-->
+            </div>
+
+                <div class="row">
+                    
+                    <p class="address col-md-12 col-sm-12 col-xs-12 text-center"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;College of Vocational Studies, Triveni, Sheikh Sarai-II, New Delhi 110017
+                        &nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-phone"></i>&nbsp;&nbsp;011 29258544, 011 29258792
+                        &nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="#">du.cvs.principal@gmail.com</a>
+                        &nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="#">cvs_1972@yahoo.com</a>
+                    </p>
+                
+                </div><!--//row-->
                
                 </div>   
             </div>        
@@ -64,7 +68,7 @@
         <div class="bottom-bar">
             <div class="container">
                 <div class="row">
-                    <small class="copyright col-md-6 col-sm-12 col-xs-12">Copyright © 2015 College of Vocational Studies | University of Delhi</small>
+                    <small class="copyright col-md-12 col-sm-12 col-xs-12 text-center">Copyright © 2015 College of Vocational Studies | University of Delhi</small>
                     
                 </div><!--//row-->
             </div><!--//container-->

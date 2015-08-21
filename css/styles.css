@@ -885,9 +885,9 @@ ul.custom-list-style li {
   margin-bottom: 20px;
 }
 .footer .footer-content {
-  padding: 30px 0;
+  padding: 30px 0px 10px 0px;
   font-size: 12px;
-  min-height: 300px;
+  min-height: 220px;
 }
 .footer .footer-content .footer-col .footer-col-inner {
   padding: 0 15px;
@@ -965,6 +965,21 @@ ul.custom-list-style li {
 }
 .footer .bottom-bar .social li a:hover {
   color: #6091ba;
+}
+
+.address{
+  font-size: 13px;
+
+}
+
+.bottom_aligner{
+    position: relative;
+}
+
+.bottom_aligner span {
+   position: absolute;
+   bottom: 0;
+   right: 0;
 }
 /* ======= FlexSlider ======= */
 .flexslider {
