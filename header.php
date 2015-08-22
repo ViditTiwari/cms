@@ -85,20 +85,23 @@ require_once('includes/config_new.php');
                         <?php echo "<li class='".Match("index")." nav-item'><a href='/cms/index.php'>Home</a>";?>
                         <?php nav_menu();?>
                     </ul><!--//nav-->
-                    <div class="col-sm-3 col-md-3 pull-left">
-            <form class="navbar-form search-form" role='search' method='post' action='search.php'>
-                <div class="input-group">
-                    <input type="text" class="form-control" name='keyword' placeholder='Search the site...'>
-                    <div class="input-group-btn">
-                       
-                        <button type='submit' name='submit' class='btn btn-theme'>Go</button>
-                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><form class="navbar-form search-form" role='search' method='post' action='search.php'>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name='keyword' placeholder='Search the site...'>
+                                <div class="input-group-btn">
+                                   <button type='submit' name='submit' class='btn btn-theme'>Go</button>
+                                </div>
+                            </div>
 
-                </div>
-            </form>
+                        </form></li>
+            
+            <li><div style="padding-top:10px;" id="google_translate_element"></div></li>
+        
          
-        </div>      
-            <div style="padding-top:10px;" id="google_translate_element"></div>
+        </ul>  
+          
+            
                 </div><!--//navabr-collapse-->
             </div><!--//container-->
         </nav><!--//main-nav-->
