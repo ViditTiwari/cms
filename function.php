@@ -67,7 +67,7 @@
     function show_latest_news(){
         $result = select_table('news');
         
-        echo '<marquee direction="up" scrolldelay="50" scrollamount="2" truespeed="1" height="400px" onmouseover="this.stop()" onmouseout="this.start()" behavior="scroll" style="height: 170px;">';
+        echo '<marquee direction="up" scrolldelay="50" scrollamount="3" truespeed height="400px"  onmouseover="this.stop()" onmouseout="this.start()" behavior="scroll" style="height:400px;">';
         echo '<div id="news_ticker">';   
         echo '<ul>';
         
