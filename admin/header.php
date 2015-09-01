@@ -198,9 +198,6 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                             <!-- /.nav-second-level -->
 
                         <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> Archives</a>
-                        </li>
-                        <li>
                             <a href="gallery.php"><i class="fa fa-edit fa-fw"></i> Gallery</a>
                         </li>
                         <li>
@@ -213,18 +210,6 @@ if(!$user->is_logged_in()){ header('Location: index.php'); }
                                     <a href="delete_file.php">Delete File</a>
                                 </li>
                                 
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

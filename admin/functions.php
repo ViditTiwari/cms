@@ -38,8 +38,8 @@ function delete_sub_menu($proname)
 // Add new Page
 function add_page($Title, $content, $url){
 	global $db;
-	
-	$query = $db->query("INSERT INTO page (title, contents, url) VALUES ('$Title', '$content', '$url')");
+	$timeStamp=date('Y-m');
+	$query = $db->query("INSERT INTO page (title, contents, url, Time) VALUES ('$Title', '$content', '$url', '$timeStamp')");
 	$page_id = $db->lastInsertId(); 
 	if (!$query) {
 			return $db->errorInfo();;

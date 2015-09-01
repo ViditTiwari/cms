@@ -61,7 +61,79 @@
                 echo "<li class='".Match($row['m_menu_link'])." nav-item'><a href=$row[m_menu_link]>$row[m_menu_name]</a>";
                 echo "</li>";
             }
-        }                          
+        }   
+
+    function get_month($key){
+    	switch ($key) {
+    				case '01':
+    						return "January";
+    					break;
+    				case '02':
+    						return "Febuary";
+    					break;
+    				case '03':
+    						return "March";
+    					break;
+    				case '04':
+    						return "April";
+    					break;
+    				case '05':
+    						return "May";
+    					break;
+    				case '06':
+    						return "June";
+    					break;
+    				case '07':
+    						return "July";
+    					break;
+    				case '08':
+    						return "August";
+    					break;
+    				case '09':
+    						return  "September";
+    					break;
+    				case '10':
+    						return "October";
+    					break;
+    				case '11':
+    						return  "November";
+    					break;
+    				case '12':
+    						return "December";
+    					break;
+    			}
+    }
+
+    function create_archive($date){
+    	foreach ($date as $year => $month) {
+    		echo "<li><a href='#'>$year</a></li>";
+    		foreach ($month as $key) {
+    			echo "<ul><li><a href='archive_month.php?year=$year&month=$key'>".get_month($key)."</a></li></ul>";
+    			
+    		}
+    	}
+ 
+    }
+
+    function show_archive(){
+     	global $db;
+     	$query = $db->query("SELECT Time FROM page");
+     	$query = $query->fetchAll();
+     	$tmp_arr =array();
+     	foreach ($query as $time) {
+     		$tmp = explode('-', $time['Time']);
+     		$year = $tmp[0];
+     		$month = $tmp[1];
+     		if (!$tmp_arr[$year]) {
+    		 	$tmp_arr[$year] = array();
+    			}
+    		array_push($tmp_arr[$year], $month);
+    		$tmp_arr[$year] = array_unique($tmp_arr[$year]);
+    		// print_r($tmp_arr);
+     	}
+     	create_archive($tmp_arr);
+
+     }
     }
 ?>
        
