@@ -106,9 +106,12 @@
 
     function create_archive($date){
     	foreach ($date as $year => $month) {
+            $occurences = array_count_values($month);
     		echo "<li><a href='#'>$year</a></li>";
+            $month = array_unique($month);
+            asort($month);
     		foreach ($month as $key) {
-    			echo "<ul><li><a href='archive_month.php?year=$year&month=$key'>".get_month($key)."</a></li></ul>";
+                echo "<ul><li><a href='archive_month.php?year=$year&month=$key'>".get_month($key)."</a>(".$occurences[$key].")</li></ul>";
     			
     		}
     	}
@@ -128,11 +131,10 @@
                 $tmp_arr[$year] = array();
             }
     		array_push($tmp_arr[$year], $month);
-    		$tmp_arr[$year] = array_unique($tmp_arr[$year]);
+    		// $tmp_arr[$year] = array_unique($tmp_arr[$year]);
     		// print_r($tmp_arr);
      	}
      	create_archive($tmp_arr);
-
      }
     }
 ?>
