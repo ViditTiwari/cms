@@ -62,7 +62,7 @@
 											$stringCut = substr($string, 0, 100);
 											$string = substr($stringCut, 0, strrpos($stringCut, ' ')); 
 										}
-										echo "<p>$string........<a href=$row[url]>Read More</a></p>";
+                                        echo "<p>$string........<a href=$row[url]>Read More</a></p>";
 										// echo "<a href=$row[url]>$row[url]</a>\n";
 										$i++;
 									} 

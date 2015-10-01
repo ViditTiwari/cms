@@ -14,7 +14,7 @@
                             <article class="course-item">
                               
                                 <div class="page-row">
-                                  	<?php print_r(show_archive());?>
+                                  	<?php show_archive();?>
                                  </div>                   
                             </article><!--//course-item-->                                              
                         </div><!--//course-wrapper-->

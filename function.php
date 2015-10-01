@@ -121,12 +121,12 @@
      	$query = $query->fetchAll();
      	$tmp_arr =array();
      	foreach ($query as $time) {
-     		$tmp = explode('-', $time['Time']);
+            $tmp = explode('-', $time['Time']);
      		$year = $tmp[0];
      		$month = $tmp[1];
-     		if (!$tmp_arr[$year]) {
-    		 	$tmp_arr[$year] = array();
-    			}
+            if (!isset($tmp_arr[$year])) {
+                $tmp_arr[$year] = array();
+            }
     		array_push($tmp_arr[$year], $month);
     		$tmp_arr[$year] = array_unique($tmp_arr[$year]);
     		// print_r($tmp_arr);
